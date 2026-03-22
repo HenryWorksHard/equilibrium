@@ -46,19 +46,9 @@ export const TokenCard = ({
 }: TokenCardProps) => {
   const [imgError, setImgError] = useState(false);
   
-  // Use log scale for VISUAL size only (so coins are all visible)
-  // Weight for balance is still linear via marketCapToWeight
-  const maxMcap = 38230116; // USELESS - highest
-  const minMcap = 36558;    // BEST - lowest
-  const logMax = Math.log(maxMcap);
-  const logMin = Math.log(minMcap);
-  const logCurrent = Math.log(token.marketCap);
-  const sizeRatio = (logCurrent - logMin) / (logMax - logMin);
-  
-  // Pool tokens: 40-65px, Bucket tokens: 24-36px (tighter range)
-  const size = compact 
-    ? 24 + sizeRatio * 12  
-    : 40 + sizeRatio * 25;
+  // Fixed sizes - all coins same size for clean look
+  // Weight differences are shown by the scale tilt, not coin size
+  const size = compact ? 28 : 48;
   
   return (
     <div
