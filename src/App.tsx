@@ -79,20 +79,8 @@ function App() {
           />
         </div>
 
-        {/* Floor area with tokens */}
-        <div 
-          className="mt-12 floor-area rounded-xl p-10 min-h-[200px] w-full max-w-4xl"
-          onDrop={handleDropPool}
-          onDragOver={(e) => e.preventDefault()}
-        >
-          <FloorTokens
-            tokens={poolTokens}
-            onDragStart={handleDragStart}
-          />
-        </div>
-
-        {/* Reset button */}
-        <div className="fixed bottom-4 right-4 z-50">
+        {/* Reset button - between scale and coins */}
+        <div className="mt-8 mb-4">
           <button
             onClick={handleReset}
             className="px-4 py-2 mono-text text-sm bg-paper border border-graphLight
@@ -101,6 +89,18 @@ function App() {
           >
             ↺ Reset
           </button>
+        </div>
+
+        {/* Floor area with tokens */}
+        <div 
+          className="floor-area rounded-xl p-10 min-h-[200px] w-full max-w-4xl"
+          onDrop={handleDropPool}
+          onDragOver={(e) => e.preventDefault()}
+        >
+          <FloorTokens
+            tokens={poolTokens}
+            onDragStart={handleDragStart}
+          />
         </div>
       </div>
     </div>
