@@ -134,7 +134,7 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      {/* CA Modal - Full page flip */}
+      {/* CA Modal - Centered card */}
       {showCA && (
         <div 
           className={`z-[100] ${isClosing ? 'modal-overlay-exit' : 'modal-overlay-enter'}`}
@@ -144,136 +144,111 @@ export const Sidebar = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            perspective: '2000px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            backgroundColor: 'rgba(0,0,0,0.4)',
           }}
           onClick={() => handleClose(setShowCA)}
         >
-          {/* Full-page notebook that flips */}
+          {/* Modal card */}
           <div 
-            className={`absolute inset-0 ${isClosing ? 'full-page-turn-exit' : 'full-page-turn-enter'}`}
+            className={`relative bg-paper rounded-lg shadow-2xl ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
             style={{
-              backgroundColor: '#fffef8',
-              backgroundImage: `
-                linear-gradient(#c8d4e3 1px, transparent 1px),
-                linear-gradient(90deg, #c8d4e3 1px, transparent 1px),
-                linear-gradient(#dce4ed 0.5px, transparent 0.5px),
-                linear-gradient(90deg, #dce4ed 0.5px, transparent 0.5px)
-              `,
-              backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
-              transformOrigin: 'left center',
-              boxShadow: '10px 0 40px rgba(0,0,0,0.3)',
+              maxWidth: '28rem',
+              width: '100%',
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
+              borderRadius: '4px 8px 6px 10px',
             }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Red margin line */}
-            <div className="absolute left-16 top-0 bottom-0 w-0.5 bg-red-300/60" />
+            <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-red-300/60" />
             
-            {/* Hole punches down the left */}
-            <div className="absolute left-6 top-[15%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="absolute left-6 top-[35%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="absolute left-6 top-[55%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="absolute left-6 top-[75%] w-5 h-5 rounded-full bg-gray-400/30" />
-
-            {/* Faint math scribbles */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.06] overflow-hidden font-[Caveat]">
-              <div className="absolute top-[10%] right-[15%] text-2xl text-[#6a8aaa] rotate-3">∫ f(x)dx</div>
-              <div className="absolute bottom-[20%] right-[20%] text-xl text-[#8a6a6a] -rotate-2">E = mc²</div>
-              <div className="absolute top-[30%] right-[8%] text-xl text-[#6a7a8a] rotate-6">Σᵢ xᵢ</div>
-              <div className="absolute bottom-[40%] left-[25%] text-xl text-[#7a8a6a] -rotate-4">a² + b² = c²</div>
-            </div>
+            {/* Hole punches */}
+            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%-70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%+70px)] w-4 h-4 rounded-full bg-gray-300/30" />
             
             {/* Close button */}
             <button 
               onClick={() => handleClose(setShowCA)}
-              className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors z-10 
-                font-[Caveat] text-3xl"
+              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                text-ink/40 hover:text-ink transition-colors font-[Caveat] text-3xl z-10"
             >
               ✕
             </button>
 
-            {/* Content - centered on page */}
-            <div className="absolute inset-0 flex items-center justify-center pl-20">
-              <div className="text-center max-w-lg">
-                <div className="flex items-center justify-center gap-2 mb-12">
-                  <span className="font-[Caveat] text-3xl text-ink/70 tracking-wide">Contract Address</span>
-                </div>
-                
-                <div className="mb-12">
-                  <div className="text-8xl text-ink/15 mb-8">⏳</div>
-                  <p className="font-[Caveat] text-5xl text-ink/70">Coming Soon</p>
-                  <p className="font-[Caveat] text-xl text-ink/40 mt-8">Launch pending...</p>
-                </div>
+            {/* Content */}
+            <div className="text-center pt-8 pb-10 px-10 pl-14">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="font-[Caveat] text-2xl text-ink/70 tracking-wide">Contract Address</span>
+              </div>
+              
+              <div className="mb-8">
+                <div className="text-6xl text-ink/20 mb-4">⏳</div>
+                <p className="font-[Caveat] text-4xl text-ink/70">Coming Soon</p>
+                <p className="font-[Caveat] text-lg text-ink/40 mt-4">Launch pending...</p>
+              </div>
 
-                <div className="text-ink/40 font-[Caveat] text-xl pt-8 border-t-2 border-dashed border-ink/20">
-                  ∴ patience → equilibrium
-                </div>
+              <div className="text-ink/40 font-[Caveat] text-lg pt-4 border-t border-dashed border-ink/20">
+                ∴ patience → equilibrium
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Thesis Modal - Full page flip */}
+      {/* Thesis Modal - Centered card */}
       {showThesis && (
         <div 
-          className={`z-[100] ${isClosing ? 'modal-overlay-exit' : 'modal-overlay-enter'}`}
+          className={`z-[100] overflow-y-auto ${isClosing ? 'modal-overlay-exit' : 'modal-overlay-enter'}`}
           style={{
             position: 'fixed',
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            perspective: '2000px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            backgroundColor: 'rgba(0,0,0,0.4)',
           }}
           onClick={() => handleClose(setShowThesis)}
         >
-          {/* Full-page notebook that flips */}
+          {/* Modal card */}
           <div 
-            className={`absolute inset-0 overflow-y-auto ${isClosing ? 'full-page-turn-exit' : 'full-page-turn-enter'}`}
+            className={`relative bg-paper rounded-lg shadow-2xl overflow-y-auto ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
             style={{
-              backgroundColor: '#fffef8',
-              backgroundImage: `
-                linear-gradient(#c8d4e3 1px, transparent 1px),
-                linear-gradient(90deg, #c8d4e3 1px, transparent 1px),
-                linear-gradient(#dce4ed 0.5px, transparent 0.5px),
-                linear-gradient(90deg, #dce4ed 0.5px, transparent 0.5px)
-              `,
-              backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
-              transformOrigin: 'left center',
-              boxShadow: '10px 0 40px rgba(0,0,0,0.3)',
+              maxWidth: '42rem',
+              width: '100%',
+              maxHeight: '90vh',
+              margin: '2rem 0',
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
+              borderRadius: '4px 8px 6px 10px',
             }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Red margin line */}
-            <div className="absolute left-16 top-0 bottom-0 w-0.5 bg-red-300/60" style={{ position: 'fixed' }} />
+            <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-red-300/60" />
             
-            {/* Hole punches down the left */}
-            <div className="fixed left-6 top-[15%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="fixed left-6 top-[35%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="fixed left-6 top-[55%] w-5 h-5 rounded-full bg-gray-400/30" />
-            <div className="fixed left-6 top-[75%] w-5 h-5 rounded-full bg-gray-400/30" />
-
-            {/* Faint math scribbles */}
-            <div className="fixed inset-0 pointer-events-none opacity-[0.06] overflow-hidden font-[Caveat]">
-              <div className="absolute top-[8%] right-[12%] text-2xl text-[#6a8aaa] rotate-2">∇ × E = -∂B/∂t</div>
-              <div className="absolute top-[25%] right-[5%] text-xl text-[#8a6a6a] -rotate-3">0.75% + 0.25% = 1%</div>
-              <div className="absolute bottom-[15%] right-[18%] text-xl text-[#6a7a8a] rotate-1">∑ rewards</div>
-              <div className="absolute bottom-[30%] left-[22%] text-xl text-[#7a8a6a] rotate-4">A = πr²</div>
-            </div>
+            {/* Hole punches */}
+            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%-70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%+70px)] w-4 h-4 rounded-full bg-gray-300/30" />
             
             {/* Close button */}
             <button 
               onClick={() => handleClose(setShowThesis)}
-              className="fixed top-8 right-8 w-12 h-12 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors z-10
-                font-[Caveat] text-3xl"
+              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                text-ink/40 hover:text-ink transition-colors font-[Caveat] text-3xl z-10"
             >
               ✕
             </button>
             
-            {/* Content with proper margins */}
-            <div className="py-16 px-20 pl-24 max-w-4xl mx-auto">
+            <div className="p-8 pl-14">
               <Thesis />
             </div>
           </div>
