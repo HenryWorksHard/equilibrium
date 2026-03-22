@@ -61,7 +61,7 @@ function App() {
     <div className="min-h-screen graph-paper">
       <Sidebar />
       
-      <div className="container mx-auto px-8 py-12 max-w-5xl ml-24 md:ml-32">
+      <div className="flex flex-col items-center px-4 py-8 ml-20 md:ml-24">
         <Header />
         
         {/* Scale */}

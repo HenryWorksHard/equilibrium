@@ -8,7 +8,7 @@ export const Sidebar = () => {
   return (
     <>
       {/* Sidebar */}
-      <div className="fixed left-8 md:left-12 lg:left-16 top-1/2 -translate-y-1/2 z-50">
+      <div className="fixed left-3 md:left-4 top-1/2 -translate-y-1/2 z-50">
         <div className="bg-paper border-2 border-graphLight rounded-xl p-4 shadow-lg">
           {/* Corner accents */}
           <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-graphBlue" />
