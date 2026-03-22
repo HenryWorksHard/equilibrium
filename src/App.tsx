@@ -241,8 +241,8 @@ function App() {
       <div className="flex flex-col items-center px-4 pt-12 pb-8 ml-20 md:ml-24">
         <Header />
         
-        {/* Scale - reduced spacing */}
-        <div className="mt-6 mb-4">
+        {/* Scale - extra spacing around it */}
+        <div className="mt-12 mb-8">
           <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
@@ -257,10 +257,10 @@ function App() {
         </div>
 
         {/* Reset button - between scale and coins */}
-        <div className="mt-4 mb-2">
+        <div className="mt-8 mb-4">
           <button
             onClick={handleReset}
-            className="px-3 py-1.5 mono-text text-xs bg-paper border border-graphLight
+            className="px-4 py-2 mono-text text-sm bg-paper border border-graphLight
               rounded-lg shadow-md hover:bg-cream hover:border-graphBlue
               transition-colors text-ink/70 hover:text-ink"
           >

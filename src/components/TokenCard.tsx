@@ -8,7 +8,6 @@ interface TokenCardProps {
   onDragStart?: (e: React.DragEvent, token: Token, source: string) => void;
   source: 'pool' | 'left' | 'right';
   compact?: boolean;
-  mini?: boolean;
 }
 
 // Generate a color based on ticker for fallback
@@ -43,21 +42,16 @@ export const TokenCard = ({
   isDragging, 
   onDragStart, 
   source,
-  compact = false,
-  mini = false
+  compact = false 
 }: TokenCardProps) => {
   const [imgError, setImgError] = useState(false);
   const weight = marketCapToWeight(token.marketCap);
   
   // Size based on market cap weight - logarithmic scaling
-  // Mini tokens (50% scale): 10-20px
-  // Compact tokens: 20-40px  
-  // Pool tokens: 35-70px
-  const size = mini
-    ? 10 + (weight / 100) * 10
-    : compact 
-      ? 20 + (weight / 100) * 20  
-      : 35 + (weight / 100) * 35;
+  // Pool tokens: 35-70px, Bucket tokens: 20-40px
+  const size = compact 
+    ? 20 + (weight / 100) * 20  
+    : 35 + (weight / 100) * 35;
   
   return (
     <div
