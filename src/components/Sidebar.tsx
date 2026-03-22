@@ -67,23 +67,20 @@ export const Sidebar = () => {
           onClick={() => setShowCA(false)}
         >
           <div 
-            className="note-paper-modal paper-curl rounded-lg p-10 pl-14 max-w-md w-full relative
-              transform transition-all duration-300 ease-out
-              animate-in fade-in zoom-in-95"
+            className="note-paper rounded-lg max-w-md w-full relative"
             onClick={(e) => e.stopPropagation()}
-            style={{ animationDuration: '200ms' }}
           >
             {/* Close button */}
             <button 
               onClick={() => setShowCA(false)}
               className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light"
+                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
             >
               ×
             </button>
 
             {/* Content */}
-            <div className="text-center pt-2">
+            <div className="text-center pt-8 pb-10 px-10 pl-14">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <span className="mono-text text-sm text-graphBlue tracking-wider font-medium uppercase">Contract Address</span>
               </div>
@@ -109,22 +106,21 @@ export const Sidebar = () => {
           onClick={() => setShowThesis(false)}
         >
           <div 
-            className="note-paper-modal paper-curl rounded-lg p-8 pl-14 max-w-2xl w-full relative my-8
-              transform transition-all duration-300 ease-out
-              animate-in fade-in zoom-in-95"
+            className="note-paper rounded-lg max-w-2xl w-full relative my-8"
             onClick={(e) => e.stopPropagation()}
-            style={{ animationDuration: '200ms' }}
           >
             {/* Close button */}
             <button 
               onClick={() => setShowThesis(false)}
               className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light"
+                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
             >
               ×
             </button>
             
-            <Thesis />
+            <div className="p-8 pl-14">
+              <Thesis />
+            </div>
           </div>
         </div>
       )}

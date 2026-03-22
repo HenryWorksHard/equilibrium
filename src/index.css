@@ -158,67 +158,49 @@ body {
 }
 
 /* Note paper style for modals - ruled lines like notebook */
-.note-paper-modal {
+.note-paper {
   background-color: #fffef8;
   background-image: 
     /* Horizontal ruled lines */
     repeating-linear-gradient(
       to bottom,
       transparent 0px,
-      transparent 31px,
-      #b8d4e8 31px,
-      #b8d4e8 32px
+      transparent 27px,
+      #c8dae8 27px,
+      #c8dae8 28px
     );
-  background-position: 0 40px; /* Start lines below header area */
   position: relative;
   box-shadow: 
     0 4px 6px rgba(0,0,0,0.1),
-    0 10px 40px rgba(0,0,0,0.15),
+    0 20px 60px rgba(0,0,0,0.2),
     inset 0 0 0 1px rgba(0,0,0,0.05);
 }
 
 /* Red margin line on left */
-.note-paper-modal::before {
+.note-paper::before {
   content: '';
   position: absolute;
   left: 40px;
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: 2px;
   background: #e8a0a0;
-  opacity: 0.7;
+  opacity: 0.6;
+  border-radius: 1px;
 }
 
 /* Hole punches on left side */
-.note-paper-modal::after {
+.note-paper::after {
   content: '';
   position: absolute;
-  left: 12px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  background: rgba(200,200,200,0.3);
+  width: 18px;
+  height: 18px;
+  background: rgba(180,180,180,0.25);
   border-radius: 50%;
   box-shadow: 
-    0 -60px 0 rgba(200,200,200,0.3),
-    0 60px 0 rgba(200,200,200,0.3);
-}
-
-/* Paper curl effect */
-.paper-curl {
-  position: relative;
-}
-
-.paper-curl::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 20px 20px;
-  border-color: transparent transparent #e8e4dc transparent;
-  box-shadow: -2px -2px 3px rgba(0,0,0,0.05);
+    0 -70px 0 rgba(180,180,180,0.25),
+    0 70px 0 rgba(180,180,180,0.25);
 }
