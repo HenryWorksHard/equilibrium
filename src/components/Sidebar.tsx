@@ -23,52 +23,92 @@ export const Sidebar = () => {
 
           <div className="flex flex-col gap-3">
             {/* X Button */}
-            <a
-              href="https://x.com/i/communities/2035552239163527656"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 py-3
-                bg-cream/60 border border-graphLight rounded-lg
-                hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group"
-            >
-              <span className="mono-text text-base font-bold text-ink group-hover:text-white">X</span>
-            </a>
+            <div className="relative group/tooltip">
+              <a
+                href="https://x.com/i/communities/2035552239163527656"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center px-6 py-3
+                  bg-cream/60 border border-graphLight rounded-lg
+                  hover:bg-graphBlue hover:text-white hover:border-graphBlue
+                  transition-all duration-200 group"
+              >
+                <span className="mono-text text-base font-bold text-ink group-hover:text-white">X</span>
+              </a>
+              {/* Tooltip */}
+              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+                opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
+                transition-opacity duration-200 whitespace-nowrap">
+                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                  Join Community
+                </div>
+              </div>
+            </div>
 
             {/* CA Button */}
-            <button
-              onClick={() => setShowCA(true)}
-              className="flex items-center justify-center px-6 py-3
-                bg-cream/60 border border-graphLight rounded-lg
-                hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group"
-            >
-              <span className="mono-text text-base font-bold text-ink group-hover:text-white">CA</span>
-            </button>
+            <div className="relative group/tooltip">
+              <button
+                onClick={() => setShowCA(true)}
+                className="w-full flex items-center justify-center px-6 py-3
+                  bg-cream/60 border border-graphLight rounded-lg
+                  hover:bg-graphBlue hover:text-white hover:border-graphBlue
+                  transition-all duration-200 group"
+              >
+                <span className="mono-text text-base font-bold text-ink group-hover:text-white">CA</span>
+              </button>
+              {/* Tooltip */}
+              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+                opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
+                transition-opacity duration-200 whitespace-nowrap">
+                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                  Contract Address
+                </div>
+              </div>
+            </div>
 
             {/* Thesis Button */}
-            <button
-              onClick={() => setShowThesis(true)}
-              className="flex items-center justify-center px-6 py-3
-                bg-cream/60 border border-graphLight rounded-lg
-                hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group"
-            >
-              <span className="mono-text text-base font-bold text-ink group-hover:text-white">Thesis</span>
-            </button>
+            <div className="relative group/tooltip">
+              <button
+                onClick={() => setShowThesis(true)}
+                className="w-full flex items-center justify-center px-6 py-3
+                  bg-cream/60 border border-graphLight rounded-lg
+                  hover:bg-graphBlue hover:text-white hover:border-graphBlue
+                  transition-all duration-200 group"
+              >
+                <span className="mono-text text-base font-bold text-ink group-hover:text-white">Thesis</span>
+              </button>
+              {/* Tooltip */}
+              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+                opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
+                transition-opacity duration-200 whitespace-nowrap">
+                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                  How It Works
+                </div>
+              </div>
+            </div>
 
             {/* Bonk.fun Button */}
-            <a
-              href="https://bonk.fun"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 py-3
-                bg-cream/60 border border-graphLight rounded-lg
-                hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group"
-            >
-              <span className="mono-text text-base font-bold text-ink group-hover:text-white">bonk.fun</span>
-            </a>
+            <div className="relative group/tooltip">
+              <a
+                href="https://bonk.fun"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center px-6 py-3
+                  bg-cream/60 border border-graphLight rounded-lg
+                  hover:bg-graphBlue hover:text-white hover:border-graphBlue
+                  transition-all duration-200 group"
+              >
+                <span className="mono-text text-base font-bold text-ink group-hover:text-white">bonk.fun</span>
+              </a>
+              {/* Tooltip */}
+              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+                opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
+                transition-opacity duration-200 whitespace-nowrap">
+                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                  Launch Platform
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
