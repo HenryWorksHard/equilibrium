@@ -54,18 +54,10 @@ export const formatMarketCap = (value: number): string => {
   return `$${value}`;
 };
 
-// Normalize market cap to weight using logarithmic scale for better distribution
+// Market cap IS the weight - simple and accurate
+// We just scale it down to reasonable numbers for display
 export const marketCapToWeight = (marketCap: number): number => {
-  const maxMcap = 38230116; // USELESS - highest
-  const minMcap = 36558;    // BEST - lowest
-  
-  const logMax = Math.log(maxMcap);
-  const logMin = Math.log(minMcap);
-  const logCurrent = Math.log(marketCap);
-  
-  const ratio = (logCurrent - logMin) / (logMax - logMin);
-  const minWeight = 10;
-  const maxWeight = 100;
-  
-  return minWeight + (ratio * (maxWeight - minWeight));
+  // Direct linear relationship: market cap = weight
+  // Scale down by dividing by 1000 for cleaner display numbers
+  return marketCap / 1000;
 };
