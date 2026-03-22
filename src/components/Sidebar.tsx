@@ -16,22 +16,22 @@ export const Sidebar = () => {
 
   return (
     <>
-      {/* Sidebar - clean hand-drawn style with clear text */}
-      <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '30px' }}>
+      {/* Sidebar - clean hand-drawn style with clear text - 50% reduced */}
+      <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '15px' }}>
         <div 
           className="bg-paper relative"
           style={{
-            padding: '32px',
-            borderRadius: '8px 14px 10px 18px',
-            boxShadow: '8px 8px 0 rgba(0,0,0,0.08)',
+            padding: '16px',
+            borderRadius: '4px 7px 5px 9px',
+            boxShadow: '4px 4px 0 rgba(0,0,0,0.08)',
           }}
         >
           {/* Menu Label at Top - handwritten style */}
-          <div className="text-center border-b-2 border-ink/20" style={{ marginBottom: '28px', paddingBottom: '16px', borderStyle: 'dashed' }}>
-            <span className="font-[Caveat] text-ink/70 tracking-wide" style={{ fontSize: '2.8rem' }}>menu</span>
+          <div className="text-center border-b border-ink/20" style={{ marginBottom: '14px', paddingBottom: '8px', borderStyle: 'dashed' }}>
+            <span className="font-[Caveat] text-ink/70 tracking-wide" style={{ fontSize: '1.4rem' }}>menu</span>
           </div>
 
-          <div className="flex flex-col" style={{ gap: '20px' }}>
+          <div className="flex flex-col" style={{ gap: '10px' }}>
             {/* X Button - clear with hand-drawn feel */}
             <div className="relative group/tooltip">
               <a
@@ -42,19 +42,19 @@ export const Sidebar = () => {
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  padding: '20px 56px',
-                  borderRadius: '6px 10px 7px 12px',
-                  borderWidth: '2px',
+                  padding: '10px 28px',
+                  borderRadius: '3px 5px 4px 6px',
+                  borderWidth: '1px',
                   borderStyle: 'solid',
                 }}
               >
-                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '3.5rem' }}>X</span>
+                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '1.75rem' }}>X</span>
               </a>
               {/* Tooltip */}
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
-                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '20px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '10px 18px', fontSize: '1.5rem' }}>
+                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '10px' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '5px 9px', fontSize: '0.75rem' }}>
                   Join Community
                 </div>
               </div>
@@ -68,19 +68,19 @@ export const Sidebar = () => {
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  padding: '20px 56px',
-                  borderRadius: '7px 6px 10px 7px',
-                  borderWidth: '2px',
+                  padding: '10px 28px',
+                  borderRadius: '4px 3px 5px 4px',
+                  borderWidth: '1px',
                   borderStyle: 'solid',
                 }}
               >
-                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '3.5rem' }}>CA</span>
+                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '1.75rem' }}>CA</span>
               </button>
               {/* Tooltip */}
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
-                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '20px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '10px 18px', fontSize: '1.5rem' }}>
+                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '10px' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '5px 9px', fontSize: '0.75rem' }}>
                   Contract Address
                 </div>
               </div>
@@ -94,19 +94,19 @@ export const Sidebar = () => {
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  padding: '20px 56px',
-                  borderRadius: '6px 12px 5px 10px',
-                  borderWidth: '2px',
+                  padding: '10px 28px',
+                  borderRadius: '3px 6px 3px 5px',
+                  borderWidth: '1px',
                   borderStyle: 'solid',
                 }}
               >
-                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '3.5rem' }}>Thesis</span>
+                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '1.75rem' }}>Thesis</span>
               </button>
               {/* Tooltip */}
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
-                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '20px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '10px 18px', fontSize: '1.5rem' }}>
+                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '10px' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '5px 9px', fontSize: '0.75rem' }}>
                   How It Works
                 </div>
               </div>
@@ -122,19 +122,19 @@ export const Sidebar = () => {
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  padding: '20px 56px',
-                  borderRadius: '10px 7px 12px 5px',
-                  borderWidth: '2px',
+                  padding: '10px 28px',
+                  borderRadius: '5px 4px 6px 3px',
+                  borderWidth: '1px',
                   borderStyle: 'solid',
                 }}
               >
-                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '3.5rem' }}>bonk</span>
+                <span className="font-[Caveat] font-bold text-ink group-hover:text-white" style={{ fontSize: '1.75rem' }}>bonk</span>
               </a>
               {/* Tooltip */}
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
-                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '20px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '10px 18px', fontSize: '1.5rem' }}>
+                transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '10px' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '5px 9px', fontSize: '0.75rem' }}>
                   bonk.fun
                 </div>
               </div>
