@@ -104,6 +104,10 @@ export const Sidebar = () => {
               </div>
             </div>
 
+            {/* Thesis Button - thin sketchy border */}
+            <div className="relative group/tooltip">
+              <button
+                onClick={() => setShowThesis(true)}
                 className="w-full flex items-center justify-center px-10 py-4
                   bg-cream/30 border border-ink/25
                   hover:bg-ink hover:border-ink
