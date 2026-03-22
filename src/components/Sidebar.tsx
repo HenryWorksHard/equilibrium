@@ -62,67 +62,77 @@ export const Sidebar = () => {
 
       {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
-        <div 
-          className="fixed inset-0 bg-ink/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
-          onClick={() => setShowCA(false)}
-        >
+        <>
+          {/* Backdrop */}
           <div 
-            className="note-paper rounded-lg max-w-md w-full relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button 
-              onClick={() => setShowCA(false)}
-              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]"
+            onClick={() => setShowCA(false)}
+          />
+          {/* Modal */}
+          <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none">
+            <div 
+              className="note-paper rounded-lg max-w-md w-full relative pointer-events-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
+              {/* Close button */}
+              <button 
+                onClick={() => setShowCA(false)}
+                className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                  text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+              >
+                ×
+              </button>
 
-            {/* Content */}
-            <div className="text-center pt-8 pb-10 px-10 pl-14">
-              <div className="flex items-center justify-center gap-2 mb-8">
-                <span className="mono-text text-sm text-graphBlue tracking-wider font-medium uppercase">Contract Address</span>
-              </div>
-              
-              <div className="mb-8">
-                <div className="text-6xl text-ink/20 mb-4">⏳</div>
-                <p className="font-serif text-2xl text-ink/70 italic">Coming Soon</p>
-                <p className="mono-text text-sm text-ink/40 mt-4">Launch pending...</p>
-              </div>
+              {/* Content */}
+              <div className="text-center pt-8 pb-10 px-10 pl-14">
+                <div className="flex items-center justify-center gap-2 mb-8">
+                  <span className="mono-text text-sm text-graphBlue tracking-wider font-medium uppercase">Contract Address</span>
+                </div>
+                
+                <div className="mb-8">
+                  <div className="text-6xl text-ink/20 mb-4">⏳</div>
+                  <p className="font-serif text-2xl text-ink/70 italic">Coming Soon</p>
+                  <p className="mono-text text-sm text-ink/40 mt-4">Launch pending...</p>
+                </div>
 
-              <div className="text-ink/40 mono-text text-sm pt-4 border-t border-graphLight/30">
-                ∴ patience → equilibrium
+                <div className="text-ink/40 mono-text text-sm pt-4 border-t border-graphLight/30">
+                  ∴ patience → equilibrium
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
-        <div 
-          className="fixed inset-0 bg-ink/50 backdrop-blur-sm z-[100] flex items-center justify-center overflow-y-auto p-4"
-          onClick={() => setShowThesis(false)}
-        >
+        <>
+          {/* Backdrop */}
           <div 
-            className="note-paper rounded-lg max-w-2xl w-full relative my-8"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button 
-              onClick={() => setShowThesis(false)}
-              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]"
+            onClick={() => setShowThesis(false)}
+          />
+          {/* Modal */}
+          <div className="fixed inset-0 z-[101] flex items-center justify-center overflow-y-auto p-4 pointer-events-none">
+            <div 
+              className="note-paper rounded-lg max-w-2xl w-full relative my-8 pointer-events-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
-            
-            <div className="p-8 pl-14">
-              <Thesis />
+              {/* Close button */}
+              <button 
+                onClick={() => setShowThesis(false)}
+                className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                  text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+              >
+                ×
+              </button>
+              
+              <div className="p-8 pl-14">
+                <Thesis />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
