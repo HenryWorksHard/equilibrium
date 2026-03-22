@@ -70,8 +70,8 @@ export const Sidebar = () => {
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">X</span>
               </a>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more spacing from sidebar */}
+              <div className="absolute left-full ml-8 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
                 <div className="bg-ink text-white px-4 py-2 rounded shadow-lg font-[Caveat] text-xl">
@@ -94,8 +94,8 @@ export const Sidebar = () => {
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">CA</span>
               </button>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more spacing from sidebar */}
+              <div className="absolute left-full ml-8 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
                 <div className="bg-ink text-white px-4 py-2 rounded shadow-lg font-[Caveat] text-xl">
@@ -118,8 +118,8 @@ export const Sidebar = () => {
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">Thesis</span>
               </button>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more spacing from sidebar */}
+              <div className="absolute left-full ml-8 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
                 <div className="bg-ink text-white px-4 py-2 rounded shadow-lg font-[Caveat] text-xl">
@@ -144,8 +144,8 @@ export const Sidebar = () => {
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">bonk</span>
               </a>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more spacing from sidebar */}
+              <div className="absolute left-full ml-8 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
                 <div className="bg-ink text-white px-4 py-2 rounded shadow-lg font-[Caveat] text-xl">

@@ -218,10 +218,10 @@ export const ClassicScale = ({
                   ))}
                 </div>
                 
-                {/* Drop hint - handwritten */}
+                {/* Drop hint - handwritten, centered in bucket */}
                 {leftTokens.length === 0 && (
-                  <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
-                    <span style={{ color: '#6a6a6a', fontSize: '14px', fontFamily: 'Caveat, cursive' }}>drop here</span>
+                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '10px' }}>
+                    <span style={{ color: '#8a8a8a', fontSize: '16px', fontFamily: 'Caveat, cursive' }}>drop here</span>
                   </div>
                 )}
               </div>
@@ -294,10 +294,10 @@ export const ClassicScale = ({
                   ))}
                 </div>
                 
-                {/* Drop hint - handwritten */}
+                {/* Drop hint - handwritten, centered in bucket */}
                 {rightTokens.length === 0 && (
-                  <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
-                    <span style={{ color: '#6a6a6a', fontSize: '14px', fontFamily: 'Caveat, cursive' }}>drop here</span>
+                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '10px' }}>
+                    <span style={{ color: '#8a8a8a', fontSize: '16px', fontFamily: 'Caveat, cursive' }}>drop here</span>
                   </div>
                 )}
               </div>
