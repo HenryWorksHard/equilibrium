@@ -37,7 +37,7 @@ export const ClassicScale = ({
   );
 
   const tiltAngle = useMemo(() => {
-    const diff = leftWeight - rightWeight;
+    const diff = rightWeight - leftWeight; // Inverted: heavier side drops
     const totalWeight = leftWeight + rightWeight;
     if (totalWeight === 0) return 0;
     const ratio = diff / Math.max(totalWeight, 100);
@@ -91,10 +91,10 @@ export const ClassicScale = ({
         
         {/* Stand (behind everything, doesn't rotate) */}
         <div className="absolute left-1/2 bottom-0 flex flex-col items-center z-0" style={{ transform: 'translateX(-50%)' }}>
-          {/* Vertical pole */}
+          {/* Vertical pole - extends to top */}
           <div style={{
             width: '16px',
-            height: '180px',
+            height: '280px',
             background: 'linear-gradient(90deg, #64748b 0%, #94a3b8 50%, #64748b 100%)',
             borderRadius: '2px',
             boxShadow: '2px 0 4px rgba(0,0,0,0.1)'
@@ -110,8 +110,8 @@ export const ClassicScale = ({
           }} />
         </div>
 
-        {/* Pivot point - at top center */}
-        <div className="absolute left-1/2 z-30" style={{ transform: 'translateX(-50%)', top: '100px' }}>
+        {/* Pivot point - at very top of stand */}
+        <div className="absolute left-1/2 z-30" style={{ transform: 'translateX(-50%)', top: '0px' }}>
           <div style={{
             width: '32px',
             height: '32px',
@@ -127,11 +127,11 @@ export const ClassicScale = ({
           </div>
         </div>
 
-        {/* Rotating beam assembly - positioned at pivot */}
+        {/* Rotating beam assembly - positioned at pivot (top) */}
         <div 
           className="absolute left-1/2 z-10 transition-transform duration-500 ease-out"
           style={{ 
-            top: '116px',
+            top: '16px',
             transform: `translateX(-50%) rotate(${tiltAngle}deg)`,
             transformOrigin: 'center top',
             width: '560px'
@@ -214,7 +214,7 @@ export const ClassicScale = ({
                 
                 {/* Drop hint */}
                 {leftTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 flex items-end justify-center pb-2 z-10">
                     <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
                   </div>
                 )}
@@ -287,7 +287,7 @@ export const ClassicScale = ({
                 
                 {/* Drop hint */}
                 {rightTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="absolute inset-0 flex items-end justify-center pb-2 z-10">
                     <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
                   </div>
                 )}

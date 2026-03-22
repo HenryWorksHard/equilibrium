@@ -4,6 +4,7 @@ import { PUMP_RUNNERS } from './data/runners';
 import { Header } from './components/Header';
 import { ClassicScale } from './components/ClassicScale';
 import { FloorTokens } from './components/FloorTokens';
+import { Sidebar } from './components/Sidebar';
 
 function App() {
   const [poolTokens, setPoolTokens] = useState<Token[]>(PUMP_RUNNERS);
@@ -58,11 +59,13 @@ function App() {
 
   return (
     <div className="min-h-screen graph-paper">
-      <div className="container mx-auto px-4 py-4 max-w-4xl">
+      <Sidebar />
+      
+      <div className="container mx-auto px-8 md:px-16 lg:px-24 py-8 max-w-5xl pl-24 md:pl-20">
         <Header />
         
         {/* Scale */}
-        <div className="mt-4">
+        <div className="mt-16 md:mt-20">
           <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
@@ -78,7 +81,7 @@ function App() {
 
         {/* Floor area with tokens */}
         <div 
-          className="mt-4 floor-area rounded-lg p-4 min-h-[200px]"
+          className="mt-12 md:mt-16 floor-area rounded-lg p-8 min-h-[200px]"
           onDrop={handleDropPool}
           onDragOver={(e) => e.preventDefault()}
         >

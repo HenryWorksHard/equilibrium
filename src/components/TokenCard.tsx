@@ -10,19 +10,31 @@ interface TokenCardProps {
   compact?: boolean;
 }
 
-// Generate a gradient based on ticker for fallback
-const getGradient = (ticker: string) => {
-  const gradients: Record<string, string> = {
-    BONK: 'from-orange-400 to-yellow-500',
-    POPCAT: 'from-pink-400 to-purple-500',
-    WIF: 'from-amber-400 to-orange-500',
-    PNUT: 'from-amber-600 to-yellow-600',
-    GOAT: 'from-gray-400 to-slate-600',
-    MEW: 'from-blue-400 to-cyan-500',
-    FWOG: 'from-green-400 to-emerald-500',
-    MOODENG: 'from-pink-500 to-rose-400',
+// Generate a color based on ticker for fallback
+const getColor = (ticker: string): string => {
+  const colors: Record<string, string> = {
+    USELESS: '#f39c12',
+    FIH: '#9b59b6',
+    FREYA: '#3498db',
+    BAG: '#e74c3c',
+    '1COIN': '#2ecc71',
+    MOMO: '#e91e63',
+    WAR: '#ff5722',
+    AIRCOIN: '#00bcd4',
+    AOL: '#673ab7',
+    ORG: '#4caf50',
+    KORI: '#ff9800',
+    SPSC: '#795548',
+    SCAM: '#f44336',
+    DCA: '#2196f3',
+    HOSICO: '#ffeb3b',
+    ANI: '#9c27b0',
+    LETSBONK: '#ff6f00',
+    IKUN: '#00acc1',
+    RT: '#7c4dff',
+    QX: '#76ff03',
   };
-  return gradients[ticker] || 'from-slate-400 to-slate-600';
+  return colors[ticker] || '#64748b';
 };
 
 export const TokenCard = ({ 
@@ -35,8 +47,11 @@ export const TokenCard = ({
   const [imgError, setImgError] = useState(false);
   const weight = marketCapToWeight(token.marketCap);
   
-  // Size based on market cap weight - smaller for buckets
-  const size = compact ? 28 + (weight / 100) * 12 : 56 + (weight / 100) * 24;
+  // Size based on market cap weight - logarithmic scaling
+  // Pool tokens: 35-70px, Bucket tokens: 20-40px
+  const size = compact 
+    ? 20 + (weight / 100) * 20  
+    : 35 + (weight / 100) * 35;
   
   return (
     <div
@@ -48,14 +63,17 @@ export const TokenCard = ({
         ${isDragging ? 'opacity-50 scale-95' : 'opacity-100'}
       `}
       style={{ width: size, height: size }}
+      title={`${token.name} (${token.ticker}) - ${formatMarketCap(token.marketCap)}`}
     >
-      {/* Profile image or fallback gradient */}
+      {/* Profile image or fallback */}
       {imgError ? (
         <div 
-          className={`w-full h-full rounded-full bg-gradient-to-br ${getGradient(token.ticker)}
-            border-2 border-graphBlue/30 shadow-md flex items-center justify-center`}
+          className="w-full h-full rounded-full flex items-center justify-center border-2 border-white/30 shadow-md"
+          style={{ backgroundColor: getColor(token.ticker) }}
         >
-          <span className="text-white font-bold text-xs">{token.ticker.slice(0, 2)}</span>
+          <span className="text-white font-bold" style={{ fontSize: Math.max(8, size / 4) }}>
+            {token.ticker.slice(0, 2)}
+          </span>
         </div>
       ) : (
         <img
@@ -68,10 +86,10 @@ export const TokenCard = ({
         />
       )}
       
-      {/* Market cap label */}
+      {/* Market cap label - only on pool tokens */}
       {!compact && (
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 
-          bg-paper/95 px-1.5 py-0.5 rounded text-[10px] mono-text
+          bg-paper/95 px-1 py-0.5 rounded text-[9px] mono-text
           whitespace-nowrap border border-graphLight shadow-sm text-ink/80">
           {formatMarketCap(token.marketCap)}
         </div>
@@ -80,8 +98,8 @@ export const TokenCard = ({
       {/* Ticker on hover */}
       <div className="absolute -top-5 left-1/2 -translate-x-1/2 
         opacity-0 hover:opacity-100 transition-opacity
-        bg-graphBlue text-white px-2 py-0.5 rounded text-[9px] mono-text uppercase
-        whitespace-nowrap shadow-md pointer-events-none">
+        bg-graphBlue text-white px-1.5 py-0.5 rounded text-[8px] mono-text uppercase
+        whitespace-nowrap shadow-md pointer-events-none z-50">
         {token.ticker}
       </div>
     </div>
