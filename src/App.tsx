@@ -64,45 +64,94 @@ function App() {
       
       {/* Additional hand-drawn scribbles */}
       <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
-        {/* Top area scribbles */}
-        <span className="absolute top-[12%] left-[25%] font-[Caveat] text-2xl text-[#6a8aaa] opacity-20 rotate-[-3deg]">
+        {/* Top area scribbles - calculus & algebra */}
+        <span className="absolute top-[8%] left-[18%] font-[Caveat] text-2xl text-[#6a8aaa] opacity-22 rotate-[-3deg]">
           ∫ f(x)dx
         </span>
-        <span className="absolute top-[6%] right-[20%] font-[Caveat] text-xl text-[#8a6a6a] opacity-18 rotate-[6deg]">
+        <span className="absolute top-[5%] right-[15%] font-[Caveat] text-xl text-[#8a6a6a] opacity-20 rotate-[6deg]">
           π ≈ 3.14159...
         </span>
-        <span className="absolute top-[18%] right-[35%] font-[Caveat] text-lg text-[#6a7a8a] opacity-15 rotate-[-5deg]">
+        <span className="absolute top-[14%] right-[32%] font-[Caveat] text-lg text-[#6a7a8a] opacity-18 rotate-[-5deg]">
           sin²θ + cos²θ = 1
+        </span>
+        <span className="absolute top-[3%] left-[45%] font-[Caveat] text-xl text-[#7a8a7a] opacity-16 rotate-[2deg]">
+          e^(iπ) + 1 = 0
+        </span>
+        
+        {/* Geometry - triangles, circles, angles */}
+        <span className="absolute top-[22%] left-[8%] font-[Caveat] text-xl text-[#8a7a6a] opacity-20 rotate-[-8deg]">
+          A = πr²
+        </span>
+        <span className="absolute top-[28%] right-[8%] font-[Caveat] text-lg text-[#6a8a8a] opacity-18 rotate-[4deg]">
+          C = 2πr
+        </span>
+        <span className="absolute top-[35%] left-[30%] font-[Caveat] text-xl text-[#7a6a8a] opacity-16 rotate-[-2deg]">
+          a² + b² = c²
+        </span>
+        <span className="absolute top-[18%] left-[55%] font-[Caveat] text-lg text-[#8a8a6a] opacity-15 rotate-[7deg]">
+          V = ⁴⁄₃πr³
         </span>
         
         {/* Side scribbles */}
-        <span className="absolute top-[40%] left-[3%] font-[Caveat] text-xl text-[#7a8a6a] opacity-20 rotate-[-12deg] writing-vertical">
+        <span className="absolute top-[40%] left-[3%] font-[Caveat] text-xl text-[#7a8a6a] opacity-22 rotate-[-12deg]">
           Σ xᵢ
         </span>
-        <span className="absolute top-[55%] right-[3%] font-[Caveat] text-2xl text-[#8a7a6a] opacity-18 rotate-[8deg]">
+        <span className="absolute top-[55%] right-[3%] font-[Caveat] text-2xl text-[#8a7a6a] opacity-20 rotate-[8deg]">
           ∞
+        </span>
+        <span className="absolute top-[48%] right-[6%] font-[Caveat] text-lg text-[#6a7a8a] opacity-16 rotate-[-5deg]">
+          θ = 90°
+        </span>
+        
+        {/* More geometry */}
+        <span className="absolute top-[60%] left-[12%] font-[Caveat] text-xl text-[#8a6a7a] opacity-18 rotate-[3deg]">
+          A = ½bh
+        </span>
+        <span className="absolute top-[52%] left-[35%] font-[Caveat] text-lg text-[#6a8a6a] opacity-15 rotate-[-6deg]">
+          tan θ = opp/adj
+        </span>
+        <span className="absolute top-[45%] right-[22%] font-[Caveat] text-xl text-[#7a7a8a] opacity-18 rotate-[5deg]">
+          180° - α - β
         </span>
         
         {/* Bottom scribbles */}
-        <span className="absolute bottom-[25%] left-[15%] font-[Caveat] text-xl text-[#6a6a8a] opacity-15 rotate-[3deg]">
+        <span className="absolute bottom-[28%] left-[15%] font-[Caveat] text-xl text-[#6a6a8a] opacity-18 rotate-[3deg]">
           lim x→∞
         </span>
-        <span className="absolute bottom-[8%] left-[40%] font-[Caveat] text-lg text-[#7a6a7a] opacity-18 rotate-[-4deg]">
+        <span className="absolute bottom-[10%] left-[38%] font-[Caveat] text-lg text-[#7a6a7a] opacity-20 rotate-[-4deg]">
           y = mx + b
         </span>
-        <span className="absolute bottom-[20%] right-[25%] font-[Caveat] text-xl text-[#6a8a7a] opacity-20 rotate-[5deg]">
+        <span className="absolute bottom-[22%] right-[20%] font-[Caveat] text-xl text-[#6a8a7a] opacity-22 rotate-[5deg]">
           F = ma
+        </span>
+        <span className="absolute bottom-[6%] right-[35%] font-[Caveat] text-lg text-[#8a7a7a] opacity-16 rotate-[-3deg]">
+          S = 4πr²
+        </span>
+        <span className="absolute bottom-[15%] left-[5%] font-[Caveat] text-xl text-[#7a8a8a] opacity-18 rotate-[8deg]">
+          ∠ABC
         </span>
         
         {/* Scattered small ones */}
-        <span className="absolute top-[30%] left-[45%] font-[Caveat] text-lg text-[#8a8a6a] opacity-12 rotate-[-7deg]">
+        <span className="absolute top-[30%] left-[48%] font-[Caveat] text-lg text-[#8a8a6a] opacity-14 rotate-[-7deg]">
           √2
         </span>
-        <span className="absolute top-[65%] left-[55%] font-[Caveat] text-xl text-[#6a7a7a] opacity-15 rotate-[10deg]">
+        <span className="absolute top-[68%] left-[58%] font-[Caveat] text-xl text-[#6a7a7a] opacity-16 rotate-[10deg]">
           Δ
         </span>
-        <span className="absolute bottom-[35%] right-[12%] font-[Caveat] text-lg text-[#7a7a8a] opacity-18 rotate-[-2deg]">
+        <span className="absolute bottom-[38%] right-[10%] font-[Caveat] text-lg text-[#7a7a8a] opacity-20 rotate-[-2deg]">
           ∂y/∂x
+        </span>
+        <span className="absolute bottom-[32%] left-[42%] font-[Caveat] text-xl text-[#6a8a8a] opacity-15 rotate-[4deg]">
+          ≈
+        </span>
+        <span className="absolute top-[75%] right-[42%] font-[Caveat] text-lg text-[#8a6a8a] opacity-18 rotate-[-8deg]">
+          ∮ dl
+        </span>
+        <span className="absolute bottom-[45%] left-[25%] font-[Caveat] text-xl text-[#7a8a6a] opacity-16 rotate-[6deg]">
+          ⊥
+        </span>
+        <span className="absolute top-[82%] left-[18%] font-[Caveat] text-lg text-[#6a6a8a] opacity-18 rotate-[-4deg]">
+          ∥
         </span>
       </div>
       
