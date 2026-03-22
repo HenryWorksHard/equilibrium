@@ -19,7 +19,7 @@ export const Sidebar = () => {
           <div className="flex flex-col gap-2">
             {/* X Button */}
             <a
-              href="https://x.com"
+              href="https://x.com/i/communities/2035552239163527656"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center
