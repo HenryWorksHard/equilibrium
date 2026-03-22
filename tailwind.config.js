@@ -7,13 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        serif: ['Crimson Pro', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        serif: ['Computer Modern', 'Georgia', 'serif'],
       },
       colors: {
-        chalk: '#e8e6e3',
-        slate: '#1a1a2e',
-        accent: '#4a90a4',
+        paper: '#faf8f5',
+        ink: '#1a1a2e',
+        graphBlue: '#4a6fa5',
+        graphLight: '#c8d4e3',
+        wood: '#8b7355',
+        brass: '#c9a227',
+        cream: '#f5f0e6',
       }
     },
   },

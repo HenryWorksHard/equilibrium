@@ -70,41 +70,41 @@ export const BalanceScale = ({
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* Balance indicator */}
-      <div className="absolute -top-16 left-1/2 -translate-x-1/2 text-center">
-        <div className={`font-mono text-sm tracking-wider transition-colors duration-500
-          ${isBalanced ? 'text-green-400' : 'text-chalk/60'}`}>
-          {isBalanced ? '[ EQUILIBRIUM ACHIEVED ]' : '[ SEEKING BALANCE ]'}
+      <div className="absolute -top-12 left-1/2 -translate-x-1/2 text-center">
+        <div className={`mono-text text-sm tracking-wider transition-colors duration-500
+          ${isBalanced ? 'text-green-600' : 'text-ink/50'}`}>
+          {isBalanced ? '⚖ EQUILIBRIUM' : '◐ seeking balance...'}
         </div>
-        <div className="text-xs text-chalk/40 mt-1 font-mono">
+        <div className="text-xs text-ink/40 mt-1 mono-text">
           {leftWeight.toFixed(0)} : {rightWeight.toFixed(0)}
         </div>
       </div>
 
-      {/* Fulcrum / Support */}
+      {/* Fulcrum / Support - wooden triangle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0
         border-l-[30px] border-r-[30px] border-b-[60px]
-        border-l-transparent border-r-transparent border-b-slate/80" />
+        border-l-transparent border-r-transparent border-b-wood" />
 
       {/* Main beam container */}
       <div 
-        className="relative h-80 transition-transform duration-700 ease-out origin-center"
+        className="relative h-72 transition-transform duration-700 ease-out origin-center"
         style={{ transform: `rotate(${tiltAngle}deg)` }}
       >
         {/* Horizontal beam */}
         <div className="absolute top-1/2 left-0 right-0 h-3 scale-beam rounded-sm" />
 
-        {/* Center pivot point */}
+        {/* Center pivot point - brass */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-          w-6 h-6 rounded-full bg-accent/80 border-2 border-chalk/20
-          flex items-center justify-center">
-          <div className="w-2 h-2 rounded-full bg-chalk/60" />
+          w-6 h-6 rounded-full bg-brass border-2 border-wood
+          flex items-center justify-center shadow-md">
+          <div className="w-2 h-2 rounded-full bg-wood" />
         </div>
 
         {/* Left pan */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2">
+        <div className="absolute left-8 top-1/2 -translate-y-1/2">
           {/* Chain */}
-          <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-px h-8 bg-chalk/30" />
-          <div className="absolute left-1/2 -translate-x-1/2 -top-12 w-2 h-4 border-2 border-chalk/30 rounded-sm" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-6 w-px h-6 bg-wood/60" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-2 h-3 border-2 border-wood/60 rounded-sm" />
           
           {/* Pan */}
           <div
@@ -113,11 +113,12 @@ export const BalanceScale = ({
             onDragEnter={() => setIsLeftOver(true)}
             onDragLeave={() => setIsLeftOver(false)}
             className={`
-              w-40 h-40 rounded-full border-2 transition-colors duration-200
-              flex flex-wrap items-center justify-center gap-2 p-3
+              w-36 h-36 rounded-full transition-all duration-200
+              flex flex-wrap items-center justify-center gap-1 p-2
+              scale-pan
               ${isLeftOver 
-                ? 'border-accent bg-accent/10' 
-                : 'border-chalk/20 bg-slate/30'}
+                ? 'ring-2 ring-graphBlue ring-offset-2 ring-offset-paper' 
+                : ''}
             `}
           >
             {leftTokens.map((token) => (
@@ -130,16 +131,16 @@ export const BalanceScale = ({
               />
             ))}
             {leftTokens.length === 0 && (
-              <span className="text-chalk/30 text-xs font-mono">drop here</span>
+              <span className="text-wood/60 text-xs mono-text">drop here</span>
             )}
           </div>
         </div>
 
         {/* Right pan */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2">
+        <div className="absolute right-8 top-1/2 -translate-y-1/2">
           {/* Chain */}
-          <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-px h-8 bg-chalk/30" />
-          <div className="absolute left-1/2 -translate-x-1/2 -top-12 w-2 h-4 border-2 border-chalk/30 rounded-sm" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-6 w-px h-6 bg-wood/60" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-8 w-2 h-3 border-2 border-wood/60 rounded-sm" />
           
           {/* Pan */}
           <div
@@ -148,11 +149,12 @@ export const BalanceScale = ({
             onDragEnter={() => setIsRightOver(true)}
             onDragLeave={() => setIsRightOver(false)}
             className={`
-              w-40 h-40 rounded-full border-2 transition-colors duration-200
-              flex flex-wrap items-center justify-center gap-2 p-3
+              w-36 h-36 rounded-full transition-all duration-200
+              flex flex-wrap items-center justify-center gap-1 p-2
+              scale-pan
               ${isRightOver 
-                ? 'border-accent bg-accent/10' 
-                : 'border-chalk/20 bg-slate/30'}
+                ? 'ring-2 ring-graphBlue ring-offset-2 ring-offset-paper' 
+                : ''}
             `}
           >
             {rightTokens.map((token) => (
@@ -165,7 +167,7 @@ export const BalanceScale = ({
               />
             ))}
             {rightTokens.length === 0 && (
-              <span className="text-chalk/30 text-xs font-mono">drop here</span>
+              <span className="text-wood/60 text-xs mono-text">drop here</span>
             )}
           </div>
         </div>

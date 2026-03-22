@@ -1,70 +1,70 @@
 import type { Token } from '../types';
 
-// Top pump.fun runners - these would be fetched from API in production
+// BONK.fun ecosystem tokens
 export const PUMP_RUNNERS: Token[] = [
   {
     id: '1',
-    name: 'Ansem',
-    ticker: 'ANSEM',
-    image: 'https://pbs.twimg.com/profile_images/1744596874907013120/X3f3OZJP_400x400.jpg',
-    marketCap: 45000000,
-    twitter: 'blknoiz06'
+    name: 'BONK',
+    ticker: 'BONK',
+    image: '/bonk.png',
+    marketCap: 1800000000,
+    twitter: 'bonaboree'
   },
   {
     id: '2', 
-    name: 'Murad',
-    ticker: 'MURAD',
-    image: 'https://pbs.twimg.com/profile_images/1838699928618577920/KDgLqCB7_400x400.jpg',
-    marketCap: 32000000,
-    twitter: 'MustStopMurad'
+    name: 'Popcat',
+    ticker: 'POPCAT',
+    image: '/popcat.png',
+    marketCap: 450000000,
+    twitter: 'Popcat'
   },
   {
     id: '3',
-    name: 'Trench',
-    ticker: 'TRENCH',
-    image: 'https://pbs.twimg.com/profile_images/1847809057752584192/BCQPjA0L_400x400.jpg',
-    marketCap: 28000000,
-    twitter: 'TrenchCT'
+    name: 'WIF',
+    ticker: 'WIF',
+    image: '/wif.png',
+    marketCap: 620000000,
+    twitter: 'dogwifcoin'
   },
   {
     id: '4',
-    name: 'Wizard',
-    ticker: 'WIZ',
-    image: 'https://pbs.twimg.com/profile_images/1858956851972210689/RBGXV_j9_400x400.jpg',
-    marketCap: 18000000,
-    twitter: 'wizardofsoho'
+    name: 'PNUT',
+    ticker: 'PNUT',
+    image: '/pnut.png',
+    marketCap: 180000000,
+    twitter: 'paboree_sol'
   },
   {
     id: '5',
-    name: 'Mitch',
-    ticker: 'MITCH',
-    image: 'https://pbs.twimg.com/profile_images/1683318566043435009/FWLgCSjt_400x400.jpg',
-    marketCap: 15000000,
-    twitter: 'idrawline'
+    name: 'GOAT',
+    ticker: 'GOAT',
+    image: '/goat.png',
+    marketCap: 280000000,
+    twitter: 'goaboree'
   },
   {
     id: '6',
-    name: 'Dingaling',
-    ticker: 'DING',
-    image: 'https://pbs.twimg.com/profile_images/1584244592358064129/kC6s3d_V_400x400.jpg',
-    marketCap: 12000000,
-    twitter: 'daboree'
+    name: 'MEW',
+    ticker: 'MEW',
+    image: '/mew.png',
+    marketCap: 320000000,
+    twitter: 'MewsWorld'
   },
   {
     id: '7',
-    name: 'Hsaka',
-    ticker: 'HSAKA',
-    image: 'https://pbs.twimg.com/profile_images/1650920012674969601/HdqP_XmR_400x400.jpg',
-    marketCap: 9500000,
-    twitter: 'HsakaTrades'
+    name: 'FWOG',
+    ticker: 'FWOG',
+    image: '/fwog.png',
+    marketCap: 95000000,
+    twitter: 'fwogcoin'
   },
   {
     id: '8',
-    name: 'Crash',
-    ticker: 'CRASH',
-    image: 'https://pbs.twimg.com/profile_images/1843068594235879424/h3BXjxFO_400x400.jpg',
-    marketCap: 7200000,
-    twitter: 'crash_ou812'
+    name: 'MOODENG',
+    ticker: 'MOODENG',
+    image: '/moodeng.png',
+    marketCap: 150000000,
+    twitter: 'maboree_eth'
   }
 ];
 
@@ -83,7 +83,7 @@ export const formatMarketCap = (value: number): string => {
 
 // Normalize market cap to weight (1-100 scale for physics)
 export const marketCapToWeight = (marketCap: number): number => {
-  const maxCap = 50000000; // 50M as reference max
+  const maxCap = 2000000000; // 2B as reference max for BONK
   const minWeight = 10;
   const maxWeight = 100;
   const normalized = Math.min(marketCap / maxCap, 1);

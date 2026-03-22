@@ -2,13 +2,15 @@ import { useState, useCallback } from 'react';
 import type { Token } from './types';
 import { PUMP_RUNNERS } from './data/runners';
 import { Header } from './components/Header';
-import { BalanceScale } from './components/BalanceScale';
-import { TokenPool } from './components/TokenPool';
+import { ClassicScale } from './components/ClassicScale';
+import { FloorTokens } from './components/FloorTokens';
 
 function App() {
   const [poolTokens, setPoolTokens] = useState<Token[]>(PUMP_RUNNERS);
   const [leftTokens, setLeftTokens] = useState<Token[]>([]);
   const [rightTokens, setRightTokens] = useState<Token[]>([]);
+  const [isLeftOver, setIsLeftOver] = useState(false);
+  const [isRightOver, setIsRightOver] = useState(false);
 
   const handleDragStart = useCallback((e: React.DragEvent, token: Token, source: string) => {
     e.dataTransfer.setData('application/json', JSON.stringify({ token, source }));
@@ -26,13 +28,13 @@ function App() {
   }, []);
 
   const handleDropLeft = useCallback((token: Token, source: string) => {
-    if (source === 'left') return; // Already on left
+    if (source === 'left') return;
     removeFromSource(token, source);
     setLeftTokens(prev => [...prev, token]);
   }, [removeFromSource]);
 
   const handleDropRight = useCallback((token: Token, source: string) => {
-    if (source === 'right') return; // Already on right
+    if (source === 'right') return;
     removeFromSource(token, source);
     setRightTokens(prev => [...prev, token]);
   }, [removeFromSource]);
@@ -55,51 +57,48 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen chalkboard-bg">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen graph-paper">
+      <div className="container mx-auto px-4 py-4 max-w-4xl">
         <Header />
         
-        <div className="mt-12">
-          <BalanceScale
+        {/* Scale */}
+        <div className="mt-4">
+          <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
             onDropLeft={handleDropLeft}
             onDropRight={handleDropRight}
             onDragStart={handleDragStart}
+            isLeftOver={isLeftOver}
+            isRightOver={isRightOver}
+            setIsLeftOver={setIsLeftOver}
+            setIsRightOver={setIsRightOver}
           />
         </div>
 
+        {/* Floor area with tokens */}
         <div 
+          className="mt-4 floor-area rounded-lg p-4 min-h-[200px]"
           onDrop={handleDropPool}
           onDragOver={(e) => e.preventDefault()}
         >
-          <TokenPool
+          <FloorTokens
             tokens={poolTokens}
             onDragStart={handleDragStart}
           />
         </div>
 
         {/* Reset button */}
-        <div className="text-center mt-8">
+        <div className="fixed bottom-4 right-4 z-50">
           <button
             onClick={handleReset}
-            className="px-6 py-2 border border-chalk/20 rounded 
-              text-chalk/40 text-xs font-mono tracking-wider
-              hover:border-accent hover:text-accent transition-colors"
+            className="px-4 py-2 mono-text text-sm bg-paper border border-graphLight
+              rounded-lg shadow-md hover:bg-cream hover:border-graphBlue
+              transition-colors text-ink/70 hover:text-ink"
           >
-            [ reset scale ]
+            ↺ Reset
           </button>
         </div>
-
-        {/* Footer equation */}
-        <footer className="mt-16 text-center pb-8">
-          <div className="text-chalk/20 font-mono text-xs">
-            <span className="italic">for every action, an equal and opposite reaction</span>
-          </div>
-          <div className="mt-4 text-chalk/10 font-mono text-[10px]">
-            pump.fun equilibrium update
-          </div>
-        </footer>
       </div>
     </div>
   );

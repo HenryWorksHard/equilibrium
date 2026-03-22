@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Token } from '../types';
 import { formatMarketCap, marketCapToWeight } from '../data/runners';
 
@@ -9,6 +10,21 @@ interface TokenCardProps {
   compact?: boolean;
 }
 
+// Generate a gradient based on ticker for fallback
+const getGradient = (ticker: string) => {
+  const gradients: Record<string, string> = {
+    BONK: 'from-orange-400 to-yellow-500',
+    POPCAT: 'from-pink-400 to-purple-500',
+    WIF: 'from-amber-400 to-orange-500',
+    PNUT: 'from-amber-600 to-yellow-600',
+    GOAT: 'from-gray-400 to-slate-600',
+    MEW: 'from-blue-400 to-cyan-500',
+    FWOG: 'from-green-400 to-emerald-500',
+    MOODENG: 'from-pink-500 to-rose-400',
+  };
+  return gradients[ticker] || 'from-slate-400 to-slate-600';
+};
+
 export const TokenCard = ({ 
   token, 
   isDragging, 
@@ -16,10 +32,11 @@ export const TokenCard = ({
   source,
   compact = false 
 }: TokenCardProps) => {
+  const [imgError, setImgError] = useState(false);
   const weight = marketCapToWeight(token.marketCap);
   
-  // Size based on market cap weight
-  const size = compact ? 48 + (weight / 100) * 24 : 64 + (weight / 100) * 32;
+  // Size based on market cap weight - smaller for buckets
+  const size = compact ? 28 + (weight / 100) * 12 : 56 + (weight / 100) * 24;
   
   return (
     <div
@@ -27,31 +44,44 @@ export const TokenCard = ({
       onDragStart={(e) => onDragStart?.(e, token, source)}
       className={`
         relative cursor-grab active:cursor-grabbing
-        token-glow smooth-transition select-none
+        token-circle select-none
         ${isDragging ? 'opacity-50 scale-95' : 'opacity-100'}
       `}
       style={{ width: size, height: size }}
     >
-      {/* Profile image */}
-      <img
-        src={token.image}
-        alt={token.name}
-        className="w-full h-full rounded-full object-cover border-2 border-chalk/20"
-        draggable={false}
-      />
+      {/* Profile image or fallback gradient */}
+      {imgError ? (
+        <div 
+          className={`w-full h-full rounded-full bg-gradient-to-br ${getGradient(token.ticker)}
+            border-2 border-graphBlue/30 shadow-md flex items-center justify-center`}
+        >
+          <span className="text-white font-bold text-xs">{token.ticker.slice(0, 2)}</span>
+        </div>
+      ) : (
+        <img
+          src={token.image}
+          alt={token.name}
+          className="w-full h-full rounded-full object-cover 
+            border-2 border-graphBlue/30 bg-cream shadow-md"
+          draggable={false}
+          onError={() => setImgError(true)}
+        />
+      )}
       
       {/* Market cap label */}
-      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 
-        bg-slate/90 px-1.5 py-0.5 rounded text-[10px] font-mono
-        whitespace-nowrap border border-chalk/10">
-        {formatMarketCap(token.marketCap)}
-      </div>
+      {!compact && (
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 
+          bg-paper/95 px-1.5 py-0.5 rounded text-[10px] mono-text
+          whitespace-nowrap border border-graphLight shadow-sm text-ink/80">
+          {formatMarketCap(token.marketCap)}
+        </div>
+      )}
       
       {/* Ticker on hover */}
-      <div className="absolute -top-6 left-1/2 -translate-x-1/2 
+      <div className="absolute -top-5 left-1/2 -translate-x-1/2 
         opacity-0 hover:opacity-100 transition-opacity
-        bg-accent/90 px-2 py-0.5 rounded text-[10px] font-mono uppercase
-        whitespace-nowrap">
+        bg-graphBlue text-white px-2 py-0.5 rounded text-[9px] mono-text uppercase
+        whitespace-nowrap shadow-md pointer-events-none">
         {token.ticker}
       </div>
     </div>

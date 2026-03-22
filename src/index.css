@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,51 +11,148 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%);
+  background: #faf8f5;
   min-height: 100vh;
-  font-family: 'JetBrains Mono', monospace;
-  color: #e8e6e3;
-  overflow-x: hidden;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #1a1a2e;
 }
 
-/* Chalkboard grid background */
-.chalkboard-bg {
+/* Graph paper background - classic math notebook */
+.graph-paper {
+  background-color: #faf8f5;
   background-image: 
-    linear-gradient(rgba(74, 144, 164, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 144, 164, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(#c8d4e3 1px, transparent 1px),
+    linear-gradient(90deg, #c8d4e3 1px, transparent 1px),
+    linear-gradient(#dce4ed 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #dce4ed 0.5px, transparent 0.5px);
+  background-size: 
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
 }
 
-/* Chalk-like text effect */
-.chalk-text {
-  text-shadow: 
-    0 0 1px rgba(232, 230, 227, 0.8),
-    0 0 2px rgba(232, 230, 227, 0.4);
+/* Red margin line like a notebook */
+.graph-paper::before {
+  content: '';
+  position: fixed;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #e8a0a0;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
-/* Mathematical notation styling */
-.equation {
+/* Mathematical text styling */
+.math-text {
+  font-family: 'Crimson Pro', Georgia, serif;
   font-style: italic;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
-/* Scale beam gradient */
+.mono-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+/* Scale beam - wooden/brass academic feel */
 .scale-beam {
-  background: linear-gradient(90deg, 
-    #2a2a3e 0%, 
-    #3a3a4e 50%, 
-    #2a2a3e 100%);
+  background: linear-gradient(180deg, 
+    #8b7355 0%, 
+    #6b5344 50%, 
+    #5a4636 100%);
   box-shadow: 
-    0 2px 4px rgba(0,0,0,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.1);
+    0 3px 6px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.2);
 }
 
-/* Token hover glow */
-.token-glow:hover {
-  filter: drop-shadow(0 0 8px rgba(74, 144, 164, 0.6));
+/* Token circles */
+.token-circle {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  will-change: transform;
+}
+
+.token-circle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(74, 111, 165, 0.3);
+}
+
+.token-circle.dragging {
+  transform: scale(1.15);
+  box-shadow: 0 8px 30px rgba(74, 111, 165, 0.4);
+  z-index: 1000;
+}
+
+/* Floating animation base */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
 /* Smooth transitions */
 .smooth-transition {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scale pan styling */
+.scale-pan {
+  background: linear-gradient(180deg, #d4c4a8 0%, #c4b498 100%);
+  border: 2px solid #8b7355;
+  box-shadow: 
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Equation styling */
+.equation {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* Header accent */
+.header-underline {
+  position: relative;
+}
+
+.header-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4a6fa5, transparent);
+}
+
+/* Chain pattern for scale */
+.chain-pattern {
+  background: repeating-linear-gradient(
+    to bottom,
+    #4a4a4a 0px,
+    #4a4a4a 4px,
+    #6a6a6a 4px,
+    #6a6a6a 6px,
+    #4a4a4a 6px,
+    #4a4a4a 10px
+  );
+}
+
+/* Bucket shape - trapezoid bucket */
+.bucket-shape {
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 
+    inset 0 2px 4px rgba(255,255,255,0.1),
+    0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Floor/ground area */
+.floor-area {
+  background: linear-gradient(180deg, transparent 0%, rgba(200, 212, 227, 0.2) 100%);
+  border-top: 2px dashed rgba(74, 111, 165, 0.2);
 }
