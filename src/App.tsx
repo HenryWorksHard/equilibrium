@@ -153,6 +153,87 @@ function App() {
         <span className="absolute top-[82%] left-[18%] font-[Caveat] text-lg text-[#6a6a8a] opacity-18 rotate-[-4deg]">
           ∥
         </span>
+        
+        {/* NEW: More calculus & advanced math */}
+        <span className="absolute top-[12%] left-[72%] font-[Caveat] text-2xl text-[#5a7a9a] opacity-20 rotate-[-6deg]">
+          d/dx(eˣ) = eˣ
+        </span>
+        <span className="absolute top-[6%] left-[28%] font-[Caveat] text-xl text-[#7a5a8a] opacity-18 rotate-[4deg]">
+          ∇ × F
+        </span>
+        <span className="absolute top-[20%] right-[12%] font-[Caveat] text-lg text-[#6a7a6a] opacity-16 rotate-[-3deg]">
+          ∫₀^∞ e⁻ˣ² dx = √π/2
+        </span>
+        <span className="absolute top-[9%] right-[45%] font-[Caveat] text-xl text-[#8a6a6a] opacity-17 rotate-[8deg]">
+          Σ 1/n²
+        </span>
+        
+        {/* NEW: Geometry drawings (text-based) */}
+        <span className="absolute top-[38%] right-[15%] font-[Caveat] text-3xl text-[#6a8a7a] opacity-14 rotate-[2deg]">
+          △
+        </span>
+        <span className="absolute top-[25%] left-[62%] font-[Caveat] text-2xl text-[#7a7a8a] opacity-16 rotate-[-10deg]">
+          ○ r=5
+        </span>
+        <span className="absolute bottom-[52%] right-[28%] font-[Caveat] text-xl text-[#8a7a6a] opacity-18 rotate-[6deg]">
+          □ A=s²
+        </span>
+        <span className="absolute top-[42%] left-[68%] font-[Caveat] text-lg text-[#6a6a8a] opacity-15 rotate-[-4deg]">
+          ◇
+        </span>
+        
+        {/* NEW: More physics & science */}
+        <span className="absolute bottom-[18%] left-[52%] font-[Caveat] text-xl text-[#7a8a6a] opacity-20 rotate-[3deg]">
+          PV = nRT
+        </span>
+        <span className="absolute bottom-[42%] right-[38%] font-[Caveat] text-lg text-[#6a7a8a] opacity-16 rotate-[-5deg]">
+          λ = h/p
+        </span>
+        <span className="absolute top-[58%] right-[48%] font-[Caveat] text-xl text-[#8a6a7a] opacity-18 rotate-[7deg]">
+          ΔG = ΔH - TΔS
+        </span>
+        <span className="absolute bottom-[8%] left-[18%] font-[Caveat] text-lg text-[#7a7a7a] opacity-17 rotate-[-2deg]">
+          ω = 2πf
+        </span>
+        
+        {/* NEW: Trigonometry */}
+        <span className="absolute top-[65%] left-[8%] font-[Caveat] text-xl text-[#5a8a8a] opacity-19 rotate-[5deg]">
+          sin(α±β)
+        </span>
+        <span className="absolute bottom-[55%] left-[45%] font-[Caveat] text-lg text-[#8a5a7a] opacity-15 rotate-[-8deg]">
+          cos²θ
+        </span>
+        <span className="absolute top-[72%] right-[18%] font-[Caveat] text-xl text-[#6a8a5a] opacity-18 rotate-[3deg]">
+          arctan(x)
+        </span>
+        
+        {/* NEW: More symbols & notation */}
+        <span className="absolute bottom-[35%] left-[8%] font-[Caveat] text-2xl text-[#7a6a8a] opacity-20 rotate-[-6deg]">
+          ∏ᵢ
+        </span>
+        <span className="absolute top-[50%] left-[52%] font-[Caveat] text-xl text-[#8a8a5a] opacity-14 rotate-[9deg]">
+          ℕ ⊂ ℤ ⊂ ℚ
+        </span>
+        <span className="absolute bottom-[25%] right-[5%] font-[Caveat] text-lg text-[#5a7a7a] opacity-17 rotate-[-4deg]">
+          |z| = √(a²+b²)
+        </span>
+        <span className="absolute top-[85%] right-[25%] font-[Caveat] text-xl text-[#7a5a6a] opacity-16 rotate-[6deg]">
+          n! = n(n-1)!
+        </span>
+        <span className="absolute bottom-[48%] right-[52%] font-[Caveat] text-lg text-[#6a8a6a] opacity-15 rotate-[-3deg]">
+          log₂8 = 3
+        </span>
+        
+        {/* NEW: Golden ratio & special numbers */}
+        <span className="absolute top-[15%] left-[38%] font-[Caveat] text-xl text-[#8a7a5a] opacity-18 rotate-[4deg]">
+          φ = 1.618...
+        </span>
+        <span className="absolute bottom-[62%] left-[28%] font-[Caveat] text-lg text-[#5a6a8a] opacity-16 rotate-[-7deg]">
+          √5
+        </span>
+        <span className="absolute top-[78%] left-[42%] font-[Caveat] text-xl text-[#7a8a5a] opacity-17 rotate-[2deg]">
+          i² = -1
+        </span>
       </div>
       
       <Sidebar />
