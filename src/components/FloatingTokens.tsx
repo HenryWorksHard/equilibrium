@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import type { Token } from '../types';
 import { formatMarketCap } from '../data/runners';
 
-// Visual size using log scale (not for weight calculations)
+// Visual size using log scale (not for weight calculations) - v2
 const getVisualSize = (marketCap: number): number => {
   const maxMcap = 38230116;
   const minMcap = 36558;
@@ -10,7 +10,7 @@ const getVisualSize = (marketCap: number): number => {
   const logMin = Math.log(minMcap);
   const logCurrent = Math.log(marketCap);
   const ratio = (logCurrent - logMin) / (logMax - logMin);
-  return 48 + ratio * 32; // 48-80px range
+  return 50 + ratio * 30; // 50-80px range
 };
 
 interface FloatingToken extends Token {
