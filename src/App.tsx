@@ -81,7 +81,7 @@ function App() {
 
         {/* Floor area with tokens */}
         <div 
-          className="mt-20 md:mt-24 floor-area rounded-xl p-10 min-h-[200px]"
+          className="mt-24 md:mt-32 lg:mt-40 floor-area rounded-xl p-10 min-h-[200px]"
           onDrop={handleDropPool}
           onDragOver={(e) => e.preventDefault()}
         >
