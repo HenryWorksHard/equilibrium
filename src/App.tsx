@@ -61,7 +61,7 @@ function App() {
     <div className="min-h-screen graph-paper">
       <Sidebar />
       
-      <div className="container mx-auto px-12 md:px-20 lg:px-32 py-12 max-w-6xl ml-48 md:ml-56">
+      <div className="container mx-auto px-8 py-12 max-w-5xl ml-24 md:ml-32">
         <Header />
         
         {/* Scale */}
