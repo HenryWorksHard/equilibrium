@@ -63,41 +63,38 @@ export const Sidebar = () => {
       {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
         <div 
-          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center"
+          className="fixed inset-0 bg-ink/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
           onClick={() => setShowCA(false)}
         >
           <div 
-            className="bg-paper border-2 border-graphLight rounded-xl p-10 max-w-md w-full shadow-2xl relative graph-paper-modal m-4"
+            className="note-paper-modal paper-curl rounded-lg p-10 pl-14 max-w-md w-full relative
+              transform transition-all duration-300 ease-out
+              animate-in fade-in zoom-in-95"
             onClick={(e) => e.stopPropagation()}
+            style={{ animationDuration: '200ms' }}
           >
-            {/* Corner accents */}
-            <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-graphBlue" />
-            <div className="absolute -top-1 -right-1 w-5 h-5 border-t-2 border-r-2 border-graphBlue" />
-            <div className="absolute -bottom-1 -left-1 w-5 h-5 border-b-2 border-l-2 border-graphBlue" />
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-graphBlue" />
-
             {/* Close button */}
             <button 
               onClick={() => setShowCA(false)}
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl"
+              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                text-ink/40 hover:text-ink transition-colors text-2xl font-light"
             >
               ×
             </button>
 
             {/* Content */}
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <span className="mono-text text-sm text-graphBlue tracking-wider font-medium">CONTRACT ADDRESS</span>
+            <div className="text-center pt-2">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="mono-text text-sm text-graphBlue tracking-wider font-medium uppercase">Contract Address</span>
               </div>
               
-              <div className="bg-cream/60 border border-graphLight rounded-lg p-8 mb-6">
-                <div className="text-5xl text-ink/20 mb-3">⏳</div>
-                <p className="mono-text text-xl text-ink/60">Coming Soon</p>
-                <p className="mono-text text-sm text-ink/40 mt-3">Launch pending...</p>
+              <div className="mb-8">
+                <div className="text-6xl text-ink/20 mb-4">⏳</div>
+                <p className="font-serif text-2xl text-ink/70 italic">Coming Soon</p>
+                <p className="mono-text text-sm text-ink/40 mt-4">Launch pending...</p>
               </div>
 
-              <div className="text-ink/40 mono-text text-sm">
+              <div className="text-ink/40 mono-text text-sm pt-4 border-t border-graphLight/30">
                 ∴ patience → equilibrium
               </div>
             </div>
@@ -108,24 +105,21 @@ export const Sidebar = () => {
       {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
         <div 
-          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center overflow-y-auto"
+          className="fixed inset-0 bg-ink/50 backdrop-blur-sm z-[100] flex items-center justify-center overflow-y-auto p-4"
           onClick={() => setShowThesis(false)}
         >
           <div 
-            className="bg-paper border-2 border-graphLight rounded-xl p-8 max-w-2xl w-full shadow-2xl relative graph-paper-modal m-8"
+            className="note-paper-modal paper-curl rounded-lg p-8 pl-14 max-w-2xl w-full relative my-8
+              transform transition-all duration-300 ease-out
+              animate-in fade-in zoom-in-95"
             onClick={(e) => e.stopPropagation()}
+            style={{ animationDuration: '200ms' }}
           >
-            {/* Corner accents */}
-            <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-graphBlue" />
-            <div className="absolute -top-1 -right-1 w-5 h-5 border-t-2 border-r-2 border-graphBlue" />
-            <div className="absolute -bottom-1 -left-1 w-5 h-5 border-b-2 border-l-2 border-graphBlue" />
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-graphBlue" />
-
             {/* Close button */}
             <button 
               onClick={() => setShowThesis(false)}
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl"
+              className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
+                text-ink/40 hover:text-ink transition-colors text-2xl font-light"
             >
               ×
             </button>

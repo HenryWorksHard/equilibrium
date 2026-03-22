@@ -61,11 +61,11 @@ function App() {
     <div className="min-h-screen graph-paper">
       <Sidebar />
       
-      <div className="flex flex-col items-center px-4 py-8 ml-20 md:ml-24">
+      <div className="flex flex-col items-center px-4 pt-12 pb-8 ml-20 md:ml-24">
         <Header />
         
-        {/* Scale */}
-        <div className="mt-8">
+        {/* Scale - extra spacing around it */}
+        <div className="mt-12 mb-8">
           <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
