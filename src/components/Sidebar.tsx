@@ -154,10 +154,11 @@ export const Sidebar = () => {
         >
           {/* Modal card */}
           <div 
-            className={`relative bg-paper rounded-lg shadow-2xl ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
+            className={`relative rounded-lg shadow-2xl ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
             style={{
               maxWidth: '28rem',
               width: '100%',
+              backgroundColor: '#faf8f5',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
               borderRadius: '4px 8px 6px 10px',
             }}
@@ -220,12 +221,13 @@ export const Sidebar = () => {
         >
           {/* Modal card */}
           <div 
-            className={`relative bg-paper rounded-lg shadow-2xl overflow-y-auto ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
+            className={`relative rounded-lg shadow-2xl overflow-y-auto ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
             style={{
               maxWidth: '42rem',
               width: '100%',
               maxHeight: '90vh',
               margin: '2rem 0',
+              backgroundColor: '#faf8f5',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
               borderRadius: '4px 8px 6px 10px',
             }}
