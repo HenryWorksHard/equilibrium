@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Token } from '../types';
-import { formatMarketCap, marketCapToWeight } from '../data/runners';
+import { formatMarketCap } from '../data/runners';
 
 interface TokenCardProps {
   token: Token;
