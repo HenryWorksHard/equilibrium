@@ -61,11 +61,11 @@ function App() {
     <div className="min-h-screen graph-paper">
       <Sidebar />
       
-      <div className="container mx-auto px-8 md:px-16 lg:px-24 py-8 max-w-5xl pl-24 md:pl-20">
+      <div className="container mx-auto px-12 md:px-20 lg:px-32 py-12 max-w-6xl ml-48 md:ml-56">
         <Header />
         
         {/* Scale */}
-        <div className="mt-16 md:mt-20">
+        <div className="mt-20 md:mt-24">
           <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
@@ -81,7 +81,7 @@ function App() {
 
         {/* Floor area with tokens */}
         <div 
-          className="mt-12 md:mt-16 floor-area rounded-lg p-8 min-h-[200px]"
+          className="mt-20 md:mt-24 floor-area rounded-xl p-10 min-h-[200px]"
           onDrop={handleDropPool}
           onDragOver={(e) => e.preventDefault()}
         >

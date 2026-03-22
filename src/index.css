@@ -156,3 +156,12 @@ body {
   background: linear-gradient(180deg, transparent 0%, rgba(200, 212, 227, 0.2) 100%);
   border-top: 2px dashed rgba(74, 111, 165, 0.2);
 }
+
+/* Graph paper style for modals */
+.graph-paper-modal {
+  background-color: #faf8f5;
+  background-image: 
+    linear-gradient(#dce4ed 0.5px, transparent 0.5px),
+    linear-gradient(90deg, #dce4ed 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+}
