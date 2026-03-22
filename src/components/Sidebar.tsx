@@ -56,6 +56,19 @@ export const Sidebar = () => {
             >
               <span className="mono-text text-base font-bold text-ink group-hover:text-white">Thesis</span>
             </button>
+
+            {/* Bonk.fun Button */}
+            <a
+              href="https://bonk.fun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-6 py-3
+                bg-cream/60 border border-graphLight rounded-lg
+                hover:bg-graphBlue hover:text-white hover:border-graphBlue
+                transition-all duration-200 group"
+            >
+              <span className="mono-text text-base font-bold text-ink group-hover:text-white">bonk.fun</span>
+            </a>
           </div>
         </div>
       </div>
