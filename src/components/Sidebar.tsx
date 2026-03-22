@@ -115,7 +115,7 @@ export const Sidebar = () => {
             {/* Bonk Button */}
             <div className="relative group/tooltip">
               <a
-                href="https://bonk.fun"
+                href="https://www.bonk.fun/token/9Vyp1mH7kJdT61pRY4mAkPvtqdwBJEhpoT5YxGNgbonk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center bg-cream/40 border-ink/30
