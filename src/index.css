@@ -30,6 +30,76 @@ body {
     100px 100px,
     20px 20px,
     20px 20px;
+  position: relative;
+}
+
+/* Math scribbles overlay */
+.math-scribbles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.08;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  color: #4a6fa5;
+  overflow: hidden;
+}
+
+.math-scribbles::before {
+  content: 
+    '∫∫ f(x)dx = F(b) - F(a)   '
+    'E = mc²   '
+    'Σᵢ₌₁ⁿ xᵢ   '
+    'lim x→∞   '
+    'π ≈ 3.14159   '
+    '∂y/∂x   '
+    'sin²θ + cos²θ = 1   '
+    '√(a² + b²)   '
+    'Δx · Δp ≥ ℏ/2   '
+    'e^(iπ) + 1 = 0   '
+    '∇ × E = -∂B/∂t   '
+    'λ = h/p   '
+    '∮ B·dl = μ₀I   '
+    'a² + b² = c²   '
+    'f(x) = ax² + bx + c   '
+    '∞   '
+    'd/dx(eˣ) = eˣ   '
+    'log₂(n)   '
+    '∫₀^∞   '
+    'Φ = BA cos θ   ';
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  transform: rotate(-5deg);
+}
+
+.math-scribbles::after {
+  content: 
+    'y = mx + b   '
+    '∑ₙ₌₀^∞ xⁿ/n!   '
+    'P(A|B) = P(B|A)P(A)/P(B)   '
+    '∇²ψ + k²ψ = 0   '
+    'F = ma   '
+    'PV = nRT   '
+    '∂²u/∂t² = c²∇²u   '
+    'det(A) ≠ 0   '
+    'A ∩ B   '
+    'lim_{h→0}   '
+    '∫∫∫ ρ dV   '
+    'curl F   '
+    'div E = ρ/ε₀   '
+    '|z| = √(x² + y²)   '
+    'i² = -1   '
+    'φ = (1+√5)/2   ';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-size: 1rem;
+  white-space: nowrap;
+  transform: rotate(3deg);
 }
 
 /* Red margin line like a notebook */
@@ -203,4 +273,58 @@ body {
   box-shadow: 
     0 -70px 0 rgba(180,180,180,0.25),
     0 70px 0 rgba(180,180,180,0.25);
+}
+
+/* Page turn animation */
+@keyframes pageTurnIn {
+  0% {
+    transform: perspective(1200px) rotateY(-90deg);
+    transform-origin: left center;
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1200px) rotateY(0deg);
+    transform-origin: left center;
+    opacity: 1;
+  }
+}
+
+@keyframes pageTurnOut {
+  0% {
+    transform: perspective(1200px) rotateY(0deg);
+    transform-origin: left center;
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(1200px) rotateY(90deg);
+    transform-origin: left center;
+    opacity: 0;
+  }
+}
+
+.page-turn-enter {
+  animation: pageTurnIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-turn-exit {
+  animation: pageTurnOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Modal overlay fade */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.modal-overlay-enter {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-overlay-exit {
+  animation: fadeOut 0.3s ease-out forwards;
 }

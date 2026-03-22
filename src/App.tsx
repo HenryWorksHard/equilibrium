@@ -59,6 +59,9 @@ function App() {
 
   return (
     <div className="min-h-screen graph-paper">
+      {/* Math scribbles background */}
+      <div className="math-scribbles" aria-hidden="true" />
+      
       <Sidebar />
       
       <div className="flex flex-col items-center px-4 pt-12 pb-8 ml-20 md:ml-24">

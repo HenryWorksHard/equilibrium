@@ -1,14 +1,8 @@
 export const Thesis = () => {
   return (
-    <section className="mt-16 mb-8 max-w-3xl mx-auto">
-      {/* Mathematical frame */}
-      <div className="relative bg-paper/80 border-2 border-graphLight rounded-lg p-8 shadow-lg">
-        
-        {/* Corner decorations - like a proof box */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-graphBlue -translate-x-0.5 -translate-y-0.5" />
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-graphBlue translate-x-0.5 -translate-y-0.5" />
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-graphBlue -translate-x-0.5 translate-y-0.5" />
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-graphBlue translate-x-0.5 translate-y-0.5" />
+    <section className="max-w-3xl mx-auto">
+      {/* Mathematical frame - no background, inherits from modal */}
+      <div className="relative p-4">
 
         {/* Theorem header */}
         <div className="flex items-center gap-3 mb-6">
@@ -68,8 +62,8 @@ export const Thesis = () => {
         </div>
 
         {/* QED */}
-        <div className="mt-6 pt-4 border-t border-graphLight flex justify-between items-center">
-          <span className="mono-text text-xs text-ink/40">
+        <div className="mt-8 pt-4 border-t border-graphLight/50 flex justify-between items-center">
+          <span className="mono-text text-xs text-ink/50">
             ∑ aligned incentives → sustainable tokens
           </span>
           <span className="text-xl text-graphBlue">∎</span>
