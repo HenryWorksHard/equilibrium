@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import type { Token } from '../types';
-import { formatMarketCap, marketCapToWeight } from '../data/runners';
+import { formatMarketCap } from '../data/runners';
+
+// Visual size using log scale (not for weight calculations)
+const getVisualSize = (marketCap: number): number => {
+  const maxMcap = 38230116;
+  const minMcap = 36558;
+  const logMax = Math.log(maxMcap);
+  const logMin = Math.log(minMcap);
+  const logCurrent = Math.log(marketCap);
+  const ratio = (logCurrent - logMin) / (logMax - logMin);
+  return 48 + ratio * 32; // 48-80px range
+};
 
 interface FloatingToken extends Token {
   x: number;
@@ -54,7 +65,7 @@ export const FloatingTokens = ({ tokens, onDragStart, onDragEnd }: FloatingToken
         if (token.id === draggingId) return token;
         
         let { x, y, vx, vy } = token;
-        const size = 64 + (marketCapToWeight(token.marketCap) / 100) * 32;
+        const size = getVisualSize(token.marketCap);
         const radius = size / 2;
 
         // Apply velocity
@@ -134,8 +145,7 @@ export const FloatingTokens = ({ tokens, onDragStart, onDragEnd }: FloatingToken
 
       {/* Floating tokens */}
       {floatingTokens.map((token) => {
-        const weight = marketCapToWeight(token.marketCap);
-        const size = 64 + (weight / 100) * 32;
+        const size = getVisualSize(token.marketCap);
         
         return (
           <div

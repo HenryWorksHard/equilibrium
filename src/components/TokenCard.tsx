@@ -56,10 +56,10 @@ export const TokenCard = ({
       onDragStart={(e) => onDragStart?.(e, token, source)}
       className={`
         relative cursor-grab active:cursor-grabbing
-        token-circle select-none
+        token-circle select-none overflow-hidden
         ${isDragging ? 'opacity-50 scale-95' : 'opacity-100'}
       `}
-      style={{ width: size, height: size }}
+      style={{ width: size, height: size, minWidth: size, maxWidth: size, minHeight: size, maxHeight: size }}
       title={`${token.name} (${token.ticker}) - ${formatMarketCap(token.marketCap)}`}
     >
       {/* Profile image or fallback */}
@@ -76,8 +76,9 @@ export const TokenCard = ({
         <img
           src={token.image}
           alt={token.name}
-          className="w-full h-full rounded-full object-cover 
+          className="rounded-full object-cover 
             border-2 border-graphBlue/30 bg-cream shadow-md"
+          style={{ width: size, height: size }}
           draggable={false}
           onError={() => setImgError(true)}
         />
