@@ -55,10 +55,10 @@ export const TokenCard = ({
   const logCurrent = Math.log(token.marketCap);
   const sizeRatio = (logCurrent - logMin) / (logMax - logMin);
   
-  // Pool tokens: 35-70px, Bucket tokens: 20-40px
+  // Pool tokens: 40-65px, Bucket tokens: 24-36px (tighter range)
   const size = compact 
-    ? 20 + sizeRatio * 20  
-    : 35 + sizeRatio * 35;
+    ? 24 + sizeRatio * 12  
+    : 40 + sizeRatio * 25;
   
   return (
     <div
