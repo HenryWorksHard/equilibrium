@@ -65,7 +65,7 @@ function App() {
         <Header />
         
         {/* Scale */}
-        <div className="mt-20 md:mt-24">
+        <div className="mt-8">
           <ClassicScale
             leftTokens={leftTokens}
             rightTokens={rightTokens}
@@ -81,7 +81,7 @@ function App() {
 
         {/* Floor area with tokens */}
         <div 
-          className="mt-24 md:mt-32 lg:mt-40 floor-area rounded-xl p-10 min-h-[200px]"
+          className="mt-12 floor-area rounded-xl p-10 min-h-[200px] w-full max-w-4xl"
           onDrop={handleDropPool}
           onDragOver={(e) => e.preventDefault()}
         >
