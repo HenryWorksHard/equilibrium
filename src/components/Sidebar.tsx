@@ -63,20 +63,30 @@ export const Sidebar = () => {
       {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
         <div 
-          className="fixed inset-0 z-[100] grid place-items-center p-4"
-          style={{ backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)' }}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40"
           onClick={() => setShowCA(false)}
         >
           {/* Modal */}
           <div 
-            className="note-paper rounded-lg max-w-md w-full"
+            className="relative bg-amber-50 rounded-lg max-w-md w-full shadow-2xl"
+            style={{
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
+            }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Red margin line */}
+            <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-red-300/60" />
+            
+            {/* Hole punches */}
+            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%-70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%+70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            
             {/* Close button */}
             <button 
               onClick={() => setShowCA(false)}
               className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+                text-gray-400 hover:text-gray-700 transition-colors text-2xl font-light z-10"
             >
               ×
             </button>
@@ -104,20 +114,30 @@ export const Sidebar = () => {
       {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
         <div 
-          className="fixed inset-0 z-[100] grid place-items-center p-4 overflow-y-auto"
-          style={{ backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)' }}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 overflow-y-auto"
           onClick={() => setShowThesis(false)}
         >
           {/* Modal */}
           <div 
-            className="note-paper rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto my-8"
+            className="relative bg-amber-50 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8"
+            style={{
+              backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
+            }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Red margin line */}
+            <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-red-300/60" />
+            
+            {/* Hole punches */}
+            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%-70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            <div className="absolute left-2.5 top-[calc(50%+70px)] w-4 h-4 rounded-full bg-gray-300/30" />
+            
             {/* Close button */}
             <button 
               onClick={() => setShowThesis(false)}
               className="absolute top-3 right-4 w-10 h-10 flex items-center justify-center
-                text-ink/40 hover:text-ink transition-colors text-2xl font-light z-10"
+                text-gray-400 hover:text-gray-700 transition-colors text-2xl font-light z-10"
             >
               ×
             </button>
