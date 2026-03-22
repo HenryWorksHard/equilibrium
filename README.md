@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Equilibrium ⚖️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live:** https://buyequilibrium.com  
+**Backup:** https://equilibrium-sand.vercel.app  
+**Vercel Project:** equilibrium-sand
 
-Currently, two official plugins are available:
+## What Is This?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A visual memecoin comparison tool built for bonk.fun's Balanced Mode launch. Users drag tokens onto an old-school balance scale to compare market caps in real-time.
 
-## React Compiler
+## Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Draggable Tokens** — Physics-based floating tokens you can throw onto the scale
+- **Real-time Scale** — Heavier side tips down, shows market cap differential
+- **Tiered Token Display** — Pyramid layout: Whales → Runners → Mid-Tier → Emerging → Micros → Floor
+- **Mathematical Thesis** — Explains Balanced Mode mechanics (0.75% LP depth, 0.25% creator rewards)
+- **Note Paper Modals** — Styled like ruled notebook paper with hole punches
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion (animations)
+- Matter.js (physics for floating tokens)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd ~/clawd/projects/equilibrium
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Deployed on Vercel. Auto-deploys on push to main.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git add -A && git commit -m "update" && git push
 ```
+
+## Domain
+
+- **Primary:** buyequilibrium.com (Google Domains)
+- **Root A record:** 76.76.21.21 (Vercel)
+- **www CNAME:** cname.vercel-dns.com
+
+## Sidebar Buttons
+
+- **𝕏** — Links to X/Twitter (update href when account created)
+- **CA** — Shows "Coming Soon" modal (update after coin launches)
+- **∑** — Opens Thesis modal explaining Balanced Mode math
+
+## Files
+
+- `src/App.tsx` — Main layout
+- `src/components/ClassicScale.tsx` — The balance scale
+- `src/components/FloorTokens.tsx` — Tiered token pyramid
+- `src/components/Sidebar.tsx` — Left sidebar with modals
+- `src/components/Thesis.tsx` — Mathematical thesis box
+- `src/components/Header.tsx` — Title and swap symbol
+
+---
+
+*Built for bonk.fun Balanced Mode launch. Simple, clean, effective.*
