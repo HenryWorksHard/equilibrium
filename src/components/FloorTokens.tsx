@@ -1,6 +1,17 @@
 import { useState, useMemo } from 'react';
 import type { Token } from '../types';
-import { formatMarketCap, marketCapToWeight } from '../data/runners';
+import { formatMarketCap } from '../data/runners';
+
+// Visual size using log scale (not for weight calculations)
+const getVisualSize = (marketCap: number): number => {
+  const maxMcap = 38230116;
+  const minMcap = 36558;
+  const logMax = Math.log(maxMcap);
+  const logMin = Math.log(minMcap);
+  const logCurrent = Math.log(marketCap);
+  const ratio = (logCurrent - logMin) / (logMax - logMin);
+  return ratio; // Returns 0-1 for sizing
+};
 
 interface FloorTokensProps {
   tokens: Token[];
@@ -69,10 +80,10 @@ export const FloorTokens = ({ tokens, onDragStart }: FloorTokensProps) => {
           {/* Tier row - centered */}
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {tierTokens.map((token) => {
-              const weight = marketCapToWeight(token.marketCap);
+              const sizeRatio = getVisualSize(token.marketCap);
               // Size scales with tier: top tier bigger
               const tierScale = 1 - (tierIndex * 0.08);
-              const baseSize = 55 + (weight / 100) * 15;
+              const baseSize = 45 + sizeRatio * 25; // 45-70px range
               const size = baseSize * tierScale;
               const hasError = imgErrors[token.id];
               
