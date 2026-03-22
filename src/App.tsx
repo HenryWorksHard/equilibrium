@@ -65,173 +65,173 @@ function App() {
       {/* Additional hand-drawn scribbles */}
       <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
         {/* Top area scribbles - calculus & algebra */}
-        <span className="absolute top-[8%] left-[18%] font-[Caveat] text-2xl text-[#6a8aaa] opacity-22 rotate-[-3deg]">
+        <span className="absolute top-[8%] left-[18%] font-[Caveat] text-3xl rotate-[-3deg]" style={{ color: '#5a7a9a', opacity: 0.35 }}>
           ∫ f(x)dx
         </span>
-        <span className="absolute top-[5%] right-[15%] font-[Caveat] text-xl text-[#8a6a6a] opacity-20 rotate-[6deg]">
+        <span className="absolute top-[5%] right-[15%] font-[Caveat] text-2xl rotate-[6deg]" style={{ color: '#7a5a5a', opacity: 0.32 }}>
           π ≈ 3.14159...
         </span>
-        <span className="absolute top-[14%] right-[32%] font-[Caveat] text-lg text-[#6a7a8a] opacity-18 rotate-[-5deg]">
+        <span className="absolute top-[14%] right-[32%] font-[Caveat] text-xl rotate-[-5deg]" style={{ color: '#5a6a7a', opacity: 0.30 }}>
           sin²θ + cos²θ = 1
         </span>
-        <span className="absolute top-[3%] left-[45%] font-[Caveat] text-xl text-[#7a8a7a] opacity-16 rotate-[2deg]">
+        <span className="absolute top-[3%] left-[45%] font-[Caveat] text-2xl rotate-[2deg]" style={{ color: '#6a7a6a', opacity: 0.28 }}>
           e^(iπ) + 1 = 0
         </span>
         
         {/* Geometry - triangles, circles, angles */}
-        <span className="absolute top-[22%] left-[8%] font-[Caveat] text-xl text-[#8a7a6a] opacity-20 rotate-[-8deg]">
+        <span className="absolute top-[22%] left-[8%] font-[Caveat] text-2xl rotate-[-8deg]" style={{ color: '#7a6a5a', opacity: 0.32 }}>
           A = πr²
         </span>
-        <span className="absolute top-[28%] right-[8%] font-[Caveat] text-lg text-[#6a8a8a] opacity-18 rotate-[4deg]">
+        <span className="absolute top-[28%] right-[8%] font-[Caveat] text-xl rotate-[4deg]" style={{ color: '#5a7a7a', opacity: 0.30 }}>
           C = 2πr
         </span>
-        <span className="absolute top-[35%] left-[30%] font-[Caveat] text-xl text-[#7a6a8a] opacity-16 rotate-[-2deg]">
+        <span className="absolute top-[35%] left-[30%] font-[Caveat] text-2xl rotate-[-2deg]" style={{ color: '#6a5a7a', opacity: 0.28 }}>
           a² + b² = c²
         </span>
-        <span className="absolute top-[18%] left-[55%] font-[Caveat] text-lg text-[#8a8a6a] opacity-15 rotate-[7deg]">
+        <span className="absolute top-[18%] left-[55%] font-[Caveat] text-xl rotate-[7deg]" style={{ color: '#7a7a5a', opacity: 0.26 }}>
           V = ⁴⁄₃πr³
         </span>
         
         {/* Side scribbles */}
-        <span className="absolute top-[40%] left-[3%] font-[Caveat] text-xl text-[#7a8a6a] opacity-22 rotate-[-12deg]">
+        <span className="absolute top-[40%] left-[3%] font-[Caveat] text-2xl rotate-[-12deg]" style={{ color: '#6a7a5a', opacity: 0.35 }}>
           Σ xᵢ
         </span>
-        <span className="absolute top-[55%] right-[3%] font-[Caveat] text-2xl text-[#8a7a6a] opacity-20 rotate-[8deg]">
+        <span className="absolute top-[55%] right-[3%] font-[Caveat] text-4xl rotate-[8deg]" style={{ color: '#7a6a5a', opacity: 0.32 }}>
           ∞
         </span>
-        <span className="absolute top-[48%] right-[6%] font-[Caveat] text-lg text-[#6a7a8a] opacity-16 rotate-[-5deg]">
+        <span className="absolute top-[48%] right-[6%] font-[Caveat] text-xl rotate-[-5deg]" style={{ color: '#5a6a7a', opacity: 0.28 }}>
           θ = 90°
         </span>
         
         {/* More geometry */}
-        <span className="absolute top-[60%] left-[12%] font-[Caveat] text-xl text-[#8a6a7a] opacity-18 rotate-[3deg]">
+        <span className="absolute top-[60%] left-[12%] font-[Caveat] text-2xl rotate-[3deg]" style={{ color: '#7a5a6a', opacity: 0.30 }}>
           A = ½bh
         </span>
-        <span className="absolute top-[52%] left-[35%] font-[Caveat] text-lg text-[#6a8a6a] opacity-15 rotate-[-6deg]">
+        <span className="absolute top-[52%] left-[35%] font-[Caveat] text-xl rotate-[-6deg]" style={{ color: '#5a7a5a', opacity: 0.26 }}>
           tan θ = opp/adj
         </span>
-        <span className="absolute top-[45%] right-[22%] font-[Caveat] text-xl text-[#7a7a8a] opacity-18 rotate-[5deg]">
+        <span className="absolute top-[45%] right-[22%] font-[Caveat] text-2xl rotate-[5deg]" style={{ color: '#6a6a7a', opacity: 0.30 }}>
           180° - α - β
         </span>
         
         {/* Bottom scribbles */}
-        <span className="absolute bottom-[28%] left-[15%] font-[Caveat] text-xl text-[#6a6a8a] opacity-18 rotate-[3deg]">
+        <span className="absolute bottom-[28%] left-[15%] font-[Caveat] text-2xl rotate-[3deg]" style={{ color: '#5a5a7a', opacity: 0.30 }}>
           lim x→∞
         </span>
-        <span className="absolute bottom-[10%] left-[38%] font-[Caveat] text-lg text-[#7a6a7a] opacity-20 rotate-[-4deg]">
+        <span className="absolute bottom-[10%] left-[38%] font-[Caveat] text-xl rotate-[-4deg]" style={{ color: '#6a5a6a', opacity: 0.32 }}>
           y = mx + b
         </span>
-        <span className="absolute bottom-[22%] right-[20%] font-[Caveat] text-xl text-[#6a8a7a] opacity-22 rotate-[5deg]">
+        <span className="absolute bottom-[22%] right-[20%] font-[Caveat] text-2xl rotate-[5deg]" style={{ color: '#5a7a6a', opacity: 0.35 }}>
           F = ma
         </span>
-        <span className="absolute bottom-[6%] right-[35%] font-[Caveat] text-lg text-[#8a7a7a] opacity-16 rotate-[-3deg]">
+        <span className="absolute bottom-[6%] right-[35%] font-[Caveat] text-xl rotate-[-3deg]" style={{ color: '#7a6a6a', opacity: 0.28 }}>
           S = 4πr²
         </span>
-        <span className="absolute bottom-[15%] left-[5%] font-[Caveat] text-xl text-[#7a8a8a] opacity-18 rotate-[8deg]">
+        <span className="absolute bottom-[15%] left-[5%] font-[Caveat] text-2xl rotate-[8deg]" style={{ color: '#6a7a7a', opacity: 0.30 }}>
           ∠ABC
         </span>
         
         {/* Scattered small ones */}
-        <span className="absolute top-[30%] left-[48%] font-[Caveat] text-lg text-[#8a8a6a] opacity-14 rotate-[-7deg]">
+        <span className="absolute top-[30%] left-[48%] font-[Caveat] text-xl rotate-[-7deg]" style={{ color: '#7a7a5a', opacity: 0.25 }}>
           √2
         </span>
-        <span className="absolute top-[68%] left-[58%] font-[Caveat] text-xl text-[#6a7a7a] opacity-16 rotate-[10deg]">
+        <span className="absolute top-[68%] left-[58%] font-[Caveat] text-3xl rotate-[10deg]" style={{ color: '#5a6a6a', opacity: 0.28 }}>
           Δ
         </span>
-        <span className="absolute bottom-[38%] right-[10%] font-[Caveat] text-lg text-[#7a7a8a] opacity-20 rotate-[-2deg]">
+        <span className="absolute bottom-[38%] right-[10%] font-[Caveat] text-xl rotate-[-2deg]" style={{ color: '#6a6a7a', opacity: 0.32 }}>
           ∂y/∂x
         </span>
-        <span className="absolute bottom-[32%] left-[42%] font-[Caveat] text-xl text-[#6a8a8a] opacity-15 rotate-[4deg]">
+        <span className="absolute bottom-[32%] left-[42%] font-[Caveat] text-3xl rotate-[4deg]" style={{ color: '#5a7a7a', opacity: 0.26 }}>
           ≈
         </span>
-        <span className="absolute top-[75%] right-[42%] font-[Caveat] text-lg text-[#8a6a8a] opacity-18 rotate-[-8deg]">
+        <span className="absolute top-[75%] right-[42%] font-[Caveat] text-xl rotate-[-8deg]" style={{ color: '#7a5a7a', opacity: 0.30 }}>
           ∮ dl
         </span>
-        <span className="absolute bottom-[45%] left-[25%] font-[Caveat] text-xl text-[#7a8a6a] opacity-16 rotate-[6deg]">
+        <span className="absolute bottom-[45%] left-[25%] font-[Caveat] text-3xl rotate-[6deg]" style={{ color: '#6a7a5a', opacity: 0.28 }}>
           ⊥
         </span>
-        <span className="absolute top-[82%] left-[18%] font-[Caveat] text-lg text-[#6a6a8a] opacity-18 rotate-[-4deg]">
+        <span className="absolute top-[82%] left-[18%] font-[Caveat] text-2xl rotate-[-4deg]" style={{ color: '#5a5a7a', opacity: 0.30 }}>
           ∥
         </span>
         
-        {/* NEW: More calculus & advanced math */}
-        <span className="absolute top-[12%] left-[72%] font-[Caveat] text-2xl text-[#5a7a9a] opacity-20 rotate-[-6deg]">
+        {/* More calculus & advanced math */}
+        <span className="absolute top-[12%] left-[72%] font-[Caveat] text-2xl rotate-[-6deg]" style={{ color: '#4a6a8a', opacity: 0.32 }}>
           d/dx(eˣ) = eˣ
         </span>
-        <span className="absolute top-[6%] left-[28%] font-[Caveat] text-xl text-[#7a5a8a] opacity-18 rotate-[4deg]">
+        <span className="absolute top-[6%] left-[28%] font-[Caveat] text-2xl rotate-[4deg]" style={{ color: '#6a4a7a', opacity: 0.30 }}>
           ∇ × F
         </span>
-        <span className="absolute top-[20%] right-[12%] font-[Caveat] text-lg text-[#6a7a6a] opacity-16 rotate-[-3deg]">
+        <span className="absolute top-[20%] right-[12%] font-[Caveat] text-xl rotate-[-3deg]" style={{ color: '#5a6a5a', opacity: 0.28 }}>
           ∫₀^∞ e⁻ˣ² dx = √π/2
         </span>
-        <span className="absolute top-[9%] right-[45%] font-[Caveat] text-xl text-[#8a6a6a] opacity-17 rotate-[8deg]">
+        <span className="absolute top-[9%] right-[45%] font-[Caveat] text-2xl rotate-[8deg]" style={{ color: '#7a5a5a', opacity: 0.29 }}>
           Σ 1/n²
         </span>
         
-        {/* NEW: Geometry drawings (text-based) */}
-        <span className="absolute top-[38%] right-[15%] font-[Caveat] text-3xl text-[#6a8a7a] opacity-14 rotate-[2deg]">
+        {/* Geometry drawings (text-based) */}
+        <span className="absolute top-[38%] right-[15%] font-[Caveat] text-5xl rotate-[2deg]" style={{ color: '#5a7a6a', opacity: 0.25 }}>
           △
         </span>
-        <span className="absolute top-[25%] left-[62%] font-[Caveat] text-2xl text-[#7a7a8a] opacity-16 rotate-[-10deg]">
+        <span className="absolute top-[25%] left-[62%] font-[Caveat] text-3xl rotate-[-10deg]" style={{ color: '#6a6a7a', opacity: 0.28 }}>
           ○ r=5
         </span>
-        <span className="absolute bottom-[52%] right-[28%] font-[Caveat] text-xl text-[#8a7a6a] opacity-18 rotate-[6deg]">
+        <span className="absolute bottom-[52%] right-[28%] font-[Caveat] text-2xl rotate-[6deg]" style={{ color: '#7a6a5a', opacity: 0.30 }}>
           □ A=s²
         </span>
-        <span className="absolute top-[42%] left-[68%] font-[Caveat] text-lg text-[#6a6a8a] opacity-15 rotate-[-4deg]">
+        <span className="absolute top-[42%] left-[68%] font-[Caveat] text-3xl rotate-[-4deg]" style={{ color: '#5a5a7a', opacity: 0.26 }}>
           ◇
         </span>
         
-        {/* NEW: More physics & science */}
-        <span className="absolute bottom-[18%] left-[52%] font-[Caveat] text-xl text-[#7a8a6a] opacity-20 rotate-[3deg]">
+        {/* More physics & science */}
+        <span className="absolute bottom-[18%] left-[52%] font-[Caveat] text-2xl rotate-[3deg]" style={{ color: '#6a7a5a', opacity: 0.32 }}>
           PV = nRT
         </span>
-        <span className="absolute bottom-[42%] right-[38%] font-[Caveat] text-lg text-[#6a7a8a] opacity-16 rotate-[-5deg]">
+        <span className="absolute bottom-[42%] right-[38%] font-[Caveat] text-xl rotate-[-5deg]" style={{ color: '#5a6a7a', opacity: 0.28 }}>
           λ = h/p
         </span>
-        <span className="absolute top-[58%] right-[48%] font-[Caveat] text-xl text-[#8a6a7a] opacity-18 rotate-[7deg]">
+        <span className="absolute top-[58%] right-[48%] font-[Caveat] text-2xl rotate-[7deg]" style={{ color: '#7a5a6a', opacity: 0.30 }}>
           ΔG = ΔH - TΔS
         </span>
-        <span className="absolute bottom-[8%] left-[18%] font-[Caveat] text-lg text-[#7a7a7a] opacity-17 rotate-[-2deg]">
+        <span className="absolute bottom-[8%] left-[18%] font-[Caveat] text-xl rotate-[-2deg]" style={{ color: '#6a6a6a', opacity: 0.29 }}>
           ω = 2πf
         </span>
         
-        {/* NEW: Trigonometry */}
-        <span className="absolute top-[65%] left-[8%] font-[Caveat] text-xl text-[#5a8a8a] opacity-19 rotate-[5deg]">
+        {/* Trigonometry */}
+        <span className="absolute top-[65%] left-[8%] font-[Caveat] text-2xl rotate-[5deg]" style={{ color: '#4a7a7a', opacity: 0.31 }}>
           sin(α±β)
         </span>
-        <span className="absolute bottom-[55%] left-[45%] font-[Caveat] text-lg text-[#8a5a7a] opacity-15 rotate-[-8deg]">
+        <span className="absolute bottom-[55%] left-[45%] font-[Caveat] text-xl rotate-[-8deg]" style={{ color: '#7a4a6a', opacity: 0.26 }}>
           cos²θ
         </span>
-        <span className="absolute top-[72%] right-[18%] font-[Caveat] text-xl text-[#6a8a5a] opacity-18 rotate-[3deg]">
+        <span className="absolute top-[72%] right-[18%] font-[Caveat] text-2xl rotate-[3deg]" style={{ color: '#5a7a4a', opacity: 0.30 }}>
           arctan(x)
         </span>
         
-        {/* NEW: More symbols & notation */}
-        <span className="absolute bottom-[35%] left-[8%] font-[Caveat] text-2xl text-[#7a6a8a] opacity-20 rotate-[-6deg]">
+        {/* More symbols & notation */}
+        <span className="absolute bottom-[35%] left-[8%] font-[Caveat] text-3xl rotate-[-6deg]" style={{ color: '#6a5a7a', opacity: 0.32 }}>
           ∏ᵢ
         </span>
-        <span className="absolute top-[50%] left-[52%] font-[Caveat] text-xl text-[#8a8a5a] opacity-14 rotate-[9deg]">
+        <span className="absolute top-[50%] left-[52%] font-[Caveat] text-xl rotate-[9deg]" style={{ color: '#7a7a4a', opacity: 0.25 }}>
           ℕ ⊂ ℤ ⊂ ℚ
         </span>
-        <span className="absolute bottom-[25%] right-[5%] font-[Caveat] text-lg text-[#5a7a7a] opacity-17 rotate-[-4deg]">
+        <span className="absolute bottom-[25%] right-[5%] font-[Caveat] text-xl rotate-[-4deg]" style={{ color: '#4a6a6a', opacity: 0.29 }}>
           |z| = √(a²+b²)
         </span>
-        <span className="absolute top-[85%] right-[25%] font-[Caveat] text-xl text-[#7a5a6a] opacity-16 rotate-[6deg]">
+        <span className="absolute top-[85%] right-[25%] font-[Caveat] text-2xl rotate-[6deg]" style={{ color: '#6a4a5a', opacity: 0.28 }}>
           n! = n(n-1)!
         </span>
-        <span className="absolute bottom-[48%] right-[52%] font-[Caveat] text-lg text-[#6a8a6a] opacity-15 rotate-[-3deg]">
+        <span className="absolute bottom-[48%] right-[52%] font-[Caveat] text-xl rotate-[-3deg]" style={{ color: '#5a7a5a', opacity: 0.26 }}>
           log₂8 = 3
         </span>
         
-        {/* NEW: Golden ratio & special numbers */}
-        <span className="absolute top-[15%] left-[38%] font-[Caveat] text-xl text-[#8a7a5a] opacity-18 rotate-[4deg]">
+        {/* Golden ratio & special numbers */}
+        <span className="absolute top-[15%] left-[38%] font-[Caveat] text-2xl rotate-[4deg]" style={{ color: '#7a6a4a', opacity: 0.30 }}>
           φ = 1.618...
         </span>
-        <span className="absolute bottom-[62%] left-[28%] font-[Caveat] text-lg text-[#5a6a8a] opacity-16 rotate-[-7deg]">
+        <span className="absolute bottom-[62%] left-[28%] font-[Caveat] text-2xl rotate-[-7deg]" style={{ color: '#4a5a7a', opacity: 0.28 }}>
           √5
         </span>
-        <span className="absolute top-[78%] left-[42%] font-[Caveat] text-xl text-[#7a8a5a] opacity-17 rotate-[2deg]">
+        <span className="absolute top-[78%] left-[42%] font-[Caveat] text-2xl rotate-[2deg]" style={{ color: '#6a7a4a', opacity: 0.29 }}>
           i² = -1
         </span>
       </div>
