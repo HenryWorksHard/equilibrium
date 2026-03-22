@@ -89,41 +89,43 @@ export const ClassicScale = ({
       {/* Scale assembly - everything in one container */}
       <div className="relative" style={{ width: '600px', height: '300px' }}>
         
-        {/* Stand (behind everything, doesn't rotate) */}
+        {/* Stand (behind everything, doesn't rotate) - hand-drawn style */}
         <div className="absolute left-1/2 bottom-0 flex flex-col items-center z-0" style={{ transform: 'translateX(-50%)' }}>
-          {/* Vertical pole - extends to top */}
+          {/* Vertical pole - sketchy pencil style */}
           <div style={{
-            width: '16px',
+            width: '12px',
             height: '280px',
-            background: 'linear-gradient(90deg, #64748b 0%, #94a3b8 50%, #64748b 100%)',
-            borderRadius: '2px',
-            boxShadow: '2px 0 4px rgba(0,0,0,0.1)'
+            background: '#3a3a3a',
+            border: '2px solid #2a2a2a',
+            borderRadius: '1px',
+            boxShadow: '3px 3px 0 rgba(0,0,0,0.1)'
           }} />
-          {/* Base */}
+          {/* Base - hand-drawn */}
           <div style={{
             width: '140px',
-            height: '16px',
-            background: 'linear-gradient(180deg, #64748b 0%, #475569 100%)',
-            borderRadius: '4px',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+            height: '14px',
+            background: '#3a3a3a',
+            border: '2px solid #2a2a2a',
+            borderRadius: '2px',
+            boxShadow: '3px 3px 0 rgba(0,0,0,0.15)',
             marginTop: '4px'
           }} />
         </div>
 
-        {/* Pivot point - at very top of stand */}
+        {/* Pivot point - hand-drawn circle */}
         <div className="absolute left-1/2 z-30" style={{ transform: 'translateX(-50%)', top: '0px' }}>
           <div style={{
-            width: '32px',
-            height: '32px',
+            width: '28px',
+            height: '28px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #b45309 0%, #92400e 100%)',
-            border: '4px solid #78350f',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+            background: '#f5f0e8',
+            border: '3px solid #3a3a3a',
+            boxShadow: '2px 2px 0 rgba(0,0,0,0.15)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#451a03' }} />
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3a3a3a' }} />
           </div>
         </div>
 
@@ -137,12 +139,13 @@ export const ClassicScale = ({
             width: '560px'
           }}
         >
-          {/* Horizontal beam */}
+          {/* Horizontal beam - hand-drawn style */}
           <div style={{
-            height: '12px',
-            background: 'linear-gradient(180deg, #b45309 0%, #92400e 50%, #78350f 100%)',
-            borderRadius: '2px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+            height: '10px',
+            background: '#3a3a3a',
+            border: '2px solid #2a2a2a',
+            borderRadius: '1px',
+            boxShadow: '3px 3px 0 rgba(0,0,0,0.1)'
           }} />
 
           {/* Left and Right bucket assemblies */}
@@ -150,19 +153,19 @@ export const ClassicScale = ({
             
             {/* Left side */}
             <div className="flex flex-col items-center">
-              {/* Chains */}
-              <div className="flex gap-1">
+              {/* Chains - hand-drawn lines */}
+              <div className="flex gap-2">
                 {[0, 1, 2].map(i => (
                   <div key={i} style={{
-                    width: '3px',
+                    width: '2px',
                     height: '50px',
-                    background: 'linear-gradient(180deg, #64748b 0%, #475569 100%)',
-                    borderRadius: '2px'
+                    background: '#3a3a3a',
+                    borderRadius: '1px'
                   }} />
                 ))}
               </div>
               
-              {/* Left bucket */}
+              {/* Left bucket - hand-drawn style */}
               <div
                 onDrop={(e) => handleDrop(e, 'left')}
                 onDragOver={handleDragOver}
@@ -175,28 +178,31 @@ export const ClassicScale = ({
                   transform: isLeftOver ? 'scale(1.05)' : 'scale(1)'
                 }}
               >
-                {/* Bucket rim */}
+                {/* Bucket rim - sketchy */}
                 <div style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   right: 0,
-                  height: '10px',
-                  background: 'linear-gradient(180deg, #64748b 0%, #475569 100%)',
-                  borderRadius: '4px 4px 0 0'
+                  height: '8px',
+                  background: '#f5f0e8',
+                  border: '2px solid #3a3a3a',
+                  borderRadius: '3px 3px 0 0'
                 }} />
                 
-                {/* Bucket body */}
+                {/* Bucket body - hand-drawn trapezoid */}
                 <div style={{
                   position: 'absolute',
-                  top: '8px',
+                  top: '6px',
                   left: '5%',
                   right: '5%',
                   bottom: 0,
-                  background: 'linear-gradient(180deg, #475569 0%, #334155 100%)',
-                  borderRadius: '0 0 12px 12px',
+                  background: '#f5f0e8',
+                  border: '2px solid #3a3a3a',
+                  borderTop: 'none',
+                  borderRadius: '0 0 8px 8px',
                   clipPath: 'polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)',
-                  boxShadow: isLeftOver ? '0 0 20px rgba(59, 130, 246, 0.5)' : '0 4px 8px rgba(0,0,0,0.2)'
+                  boxShadow: isLeftOver ? '0 0 15px rgba(74, 111, 165, 0.4)' : '3px 3px 0 rgba(0,0,0,0.1)'
                 }} />
                 
                 {/* Tokens inside */}
@@ -212,10 +218,10 @@ export const ClassicScale = ({
                   ))}
                 </div>
                 
-                {/* Drop hint */}
+                {/* Drop hint - handwritten */}
                 {leftTokens.length === 0 && (
                   <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
-                    <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
+                    <span style={{ color: '#6a6a6a', fontSize: '14px', fontFamily: 'Caveat, cursive' }}>drop here</span>
                   </div>
                 )}
               </div>
@@ -223,19 +229,19 @@ export const ClassicScale = ({
 
             {/* Right side */}
             <div className="flex flex-col items-center">
-              {/* Chains */}
-              <div className="flex gap-1">
+              {/* Chains - hand-drawn lines */}
+              <div className="flex gap-2">
                 {[0, 1, 2].map(i => (
                   <div key={i} style={{
-                    width: '3px',
+                    width: '2px',
                     height: '50px',
-                    background: 'linear-gradient(180deg, #64748b 0%, #475569 100%)',
-                    borderRadius: '2px'
+                    background: '#3a3a3a',
+                    borderRadius: '1px'
                   }} />
                 ))}
               </div>
               
-              {/* Right bucket */}
+              {/* Right bucket - hand-drawn style */}
               <div
                 onDrop={(e) => handleDrop(e, 'right')}
                 onDragOver={handleDragOver}
@@ -248,28 +254,31 @@ export const ClassicScale = ({
                   transform: isRightOver ? 'scale(1.05)' : 'scale(1)'
                 }}
               >
-                {/* Bucket rim */}
+                {/* Bucket rim - sketchy */}
                 <div style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   right: 0,
-                  height: '10px',
-                  background: 'linear-gradient(180deg, #64748b 0%, #475569 100%)',
-                  borderRadius: '4px 4px 0 0'
+                  height: '8px',
+                  background: '#f5f0e8',
+                  border: '2px solid #3a3a3a',
+                  borderRadius: '3px 3px 0 0'
                 }} />
                 
-                {/* Bucket body */}
+                {/* Bucket body - hand-drawn trapezoid */}
                 <div style={{
                   position: 'absolute',
-                  top: '8px',
+                  top: '6px',
                   left: '5%',
                   right: '5%',
                   bottom: 0,
-                  background: 'linear-gradient(180deg, #475569 0%, #334155 100%)',
-                  borderRadius: '0 0 12px 12px',
+                  background: '#f5f0e8',
+                  border: '2px solid #3a3a3a',
+                  borderTop: 'none',
+                  borderRadius: '0 0 8px 8px',
                   clipPath: 'polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)',
-                  boxShadow: isRightOver ? '0 0 20px rgba(59, 130, 246, 0.5)' : '0 4px 8px rgba(0,0,0,0.2)'
+                  boxShadow: isRightOver ? '0 0 15px rgba(74, 111, 165, 0.4)' : '3px 3px 0 rgba(0,0,0,0.1)'
                 }} />
                 
                 {/* Tokens inside */}
@@ -285,10 +294,10 @@ export const ClassicScale = ({
                   ))}
                 </div>
                 
-                {/* Drop hint */}
+                {/* Drop hint - handwritten */}
                 {rightTokens.length === 0 && (
                   <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
-                    <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
+                    <span style={{ color: '#6a6a6a', fontSize: '14px', fontFamily: 'Caveat, cursive' }}>drop here</span>
                   </div>
                 )}
               </div>

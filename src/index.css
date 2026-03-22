@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,8 +13,9 @@
 body {
   background: #faf8f5;
   min-height: 100vh;
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: 'Caveat', 'Patrick Hand', cursive;
   color: #1a1a2e;
+  font-size: 1.1rem;
 }
 
 /* Graph paper background - classic math notebook */
@@ -117,26 +118,48 @@ body {
 
 /* Mathematical text styling */
 .math-text {
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-style: italic;
+  font-family: 'Caveat', cursive;
+  font-style: normal;
   letter-spacing: 0.02em;
 }
 
 .mono-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85em;
+  font-family: 'Patrick Hand', 'Caveat', cursive;
+  font-size: 1em;
 }
 
-/* Scale beam - wooden/brass academic feel */
+/* Handwritten headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+}
+
+/* Handwritten feel for buttons and UI */
+button, a {
+  font-family: 'Patrick Hand', 'Caveat', cursive;
+}
+
+/* Scale beam - hand-drawn sketchy style */
 .scale-beam {
   background: linear-gradient(180deg, 
-    #8b7355 0%, 
-    #6b5344 50%, 
-    #5a4636 100%);
+    #5a4a3a 0%, 
+    #4a3a2a 50%, 
+    #3a2a1a 100%);
   box-shadow: 
     0 3px 6px rgba(0,0,0,0.2),
-    inset 0 1px 0 rgba(255,255,255,0.2),
-    inset 0 -1px 0 rgba(0,0,0,0.2);
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  border: 2px solid #2a1a0a;
+  border-radius: 2px;
+  filter: url(#sketchy);
+}
+
+/* Hand-drawn sketch filter */
+.sketchy-border {
+  border: 2px solid #333;
+  border-radius: 3px;
+  box-shadow: 
+    2px 2px 0 rgba(0,0,0,0.1),
+    -1px -1px 0 rgba(0,0,0,0.05);
 }
 
 /* Token circles */
@@ -167,20 +190,22 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Scale pan styling */
+/* Scale pan styling - sketchy hand-drawn */
 .scale-pan {
-  background: linear-gradient(180deg, #d4c4a8 0%, #c4b498 100%);
-  border: 2px solid #8b7355;
+  background: linear-gradient(180deg, #f5f0e8 0%, #e8e0d0 100%);
+  border: 2px solid #4a4a4a;
+  border-radius: 4px;
   box-shadow: 
     inset 0 2px 4px rgba(255,255,255,0.3),
-    0 4px 8px rgba(0,0,0,0.15);
+    0 4px 8px rgba(0,0,0,0.15),
+    3px 3px 0 rgba(0,0,0,0.08);
 }
 
 /* Equation styling */
 .equation {
-  font-family: 'Crimson Pro', serif;
-  font-style: italic;
-  font-size: 1.1em;
+  font-family: 'Caveat', cursive;
+  font-style: normal;
+  font-size: 1.3em;
 }
 
 /* Header accent */
@@ -198,17 +223,17 @@ body {
   background: linear-gradient(90deg, transparent, #4a6fa5, transparent);
 }
 
-/* Chain pattern for scale */
+/* Chain pattern for scale - sketchy lines */
 .chain-pattern {
   background: repeating-linear-gradient(
     to bottom,
-    #4a4a4a 0px,
-    #4a4a4a 4px,
-    #6a6a6a 4px,
-    #6a6a6a 6px,
-    #4a4a4a 6px,
-    #4a4a4a 10px
+    #3a3a3a 0px,
+    #3a3a3a 3px,
+    transparent 3px,
+    transparent 5px
   );
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
 
 /* Bucket shape - trapezoid bucket */
