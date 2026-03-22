@@ -8,7 +8,7 @@ export const Sidebar = () => {
   return (
     <>
       {/* Sidebar */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50">
+      <div className="fixed left-16 top-1/2 -translate-y-1/2 z-50">
         <div className="bg-paper border-2 border-graphLight rounded-xl p-4 shadow-lg">
           {/* Corner accents */}
           <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-graphBlue" />
@@ -27,50 +27,47 @@ export const Sidebar = () => {
               href="https://x.com/i/communities/2035552239163527656"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3
+              className="flex items-center justify-center px-6 py-3
                 bg-cream/60 border border-graphLight rounded-lg
                 hover:bg-graphBlue hover:text-white hover:border-graphBlue
                 transition-all duration-200 group"
             >
-              <span className="text-xl font-bold text-ink group-hover:text-white w-6 text-center">𝕏</span>
-              <span className="mono-text text-sm text-ink/70 group-hover:text-white">Twitter</span>
+              <span className="mono-text text-base font-bold text-ink group-hover:text-white">X</span>
             </a>
 
             {/* CA Button */}
             <button
               onClick={() => setShowCA(true)}
-              className="flex items-center gap-3 px-4 py-3
+              className="flex items-center justify-center px-6 py-3
                 bg-cream/60 border border-graphLight rounded-lg
                 hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group text-left"
+                transition-all duration-200 group"
             >
-              <span className="mono-text text-sm font-bold text-ink group-hover:text-white w-6 text-center">CA</span>
-              <span className="mono-text text-sm text-ink/70 group-hover:text-white">Contract</span>
+              <span className="mono-text text-base font-bold text-ink group-hover:text-white">CA</span>
             </button>
 
             {/* Thesis Button */}
             <button
               onClick={() => setShowThesis(true)}
-              className="flex items-center gap-3 px-4 py-3
+              className="flex items-center justify-center px-6 py-3
                 bg-cream/60 border border-graphLight rounded-lg
                 hover:bg-graphBlue hover:text-white hover:border-graphBlue
-                transition-all duration-200 group text-left"
+                transition-all duration-200 group"
             >
-              <span className="text-xl italic font-serif text-graphBlue group-hover:text-white w-6 text-center">∑</span>
-              <span className="mono-text text-sm text-ink/70 group-hover:text-white">Thesis</span>
+              <span className="mono-text text-base font-bold text-ink group-hover:text-white">Thesis</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* CA Modal - Note paper style */}
+      {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
         <div 
-          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center p-4"
+          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center"
           onClick={() => setShowCA(false)}
         >
           <div 
-            className="bg-paper border-2 border-graphLight rounded-xl p-10 max-w-md w-full shadow-2xl relative graph-paper-modal"
+            className="bg-paper border-2 border-graphLight rounded-xl p-10 max-w-md w-full shadow-2xl relative graph-paper-modal m-4"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Corner accents */}
@@ -108,14 +105,14 @@ export const Sidebar = () => {
         </div>
       )}
 
-      {/* Thesis Modal - Note paper style */}
+      {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
         <div 
-          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center p-8 overflow-y-auto"
+          className="fixed inset-0 bg-ink/30 z-[100] flex items-center justify-center overflow-y-auto"
           onClick={() => setShowThesis(false)}
         >
           <div 
-            className="bg-paper border-2 border-graphLight rounded-xl p-8 max-w-2xl w-full shadow-2xl relative graph-paper-modal my-8"
+            className="bg-paper border-2 border-graphLight rounded-xl p-8 max-w-2xl w-full shadow-2xl relative graph-paper-modal m-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Corner accents */}
