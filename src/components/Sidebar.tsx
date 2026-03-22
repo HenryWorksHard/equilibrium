@@ -63,13 +63,27 @@ export const Sidebar = () => {
       {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40"
+          className="z-[100]"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+          }}
           onClick={() => setShowCA(false)}
         >
           {/* Modal */}
           <div 
-            className="relative bg-amber-50 rounded-lg max-w-md w-full shadow-2xl"
+            className="relative bg-amber-50 rounded-lg shadow-2xl"
             style={{
+              maxWidth: '28rem',
+              width: '100%',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
             }}
             onClick={(e) => e.stopPropagation()}
@@ -114,13 +128,29 @@ export const Sidebar = () => {
       {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 overflow-y-auto"
+          className="z-[100] overflow-y-auto"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+          }}
           onClick={() => setShowThesis(false)}
         >
           {/* Modal */}
           <div 
-            className="relative bg-amber-50 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8"
+            className="relative bg-amber-50 rounded-lg shadow-2xl overflow-y-auto"
             style={{
+              maxWidth: '42rem',
+              width: '100%',
+              maxHeight: '90vh',
+              margin: '2rem 0',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
             }}
             onClick={(e) => e.stopPropagation()}
