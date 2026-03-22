@@ -198,14 +198,18 @@ export const Sidebar = () => {
                 <span className="font-[Caveat] text-2xl text-ink/70 tracking-wide">Contract Address</span>
               </div>
               
-              <div className="mb-8">
-                <div className="text-6xl text-ink/20 mb-4">⏳</div>
-                <p className="font-[Caveat] text-4xl text-ink/70">Coming Soon</p>
-                <p className="font-[Caveat] text-lg text-ink/40 mt-4">Launch pending...</p>
-              </div>
-
-              <div className="text-ink/40 font-[Caveat] text-lg pt-4 border-t border-dashed border-ink/20">
-                ∴ patience → equilibrium
+              <div className="mb-6">
+                <p className="font-mono text-sm text-ink/80 break-all select-all leading-relaxed">
+                  9Vyp1mH7kJdT61pRY4mAkPvtqdwBJEhpoT5YxGNgbonk
+                </p>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText('9Vyp1mH7kJdT61pRY4mAkPvtqdwBJEhpoT5YxGNgbonk');
+                  }}
+                  className="mt-4 px-6 py-2 bg-ink/10 hover:bg-ink/20 rounded-full font-[Caveat] text-xl text-ink/70 transition-colors"
+                >
+                  Copy CA
+                </button>
               </div>
             </div>
           </div>
