@@ -16,45 +16,56 @@ export const Sidebar = () => {
 
   return (
     <>
-      {/* SVG filter for hand-drawn wavy effect */}
+      {/* SVG filter for hand-drawn wavy effect - more subtle */}
       <svg className="absolute w-0 h-0">
         <defs>
-          <filter id="squiggly">
-            <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+          <filter id="sketchy">
+            <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise" seed="1"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" />
           </filter>
         </defs>
       </svg>
 
-      {/* Sidebar - hand-drawn notebook style */}
-      <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '24px' }}>
+      {/* Sidebar - hand-drawn sketch style with thin pencil lines */}
+      <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '20px' }}>
         <div 
-          className="bg-paper border-[3px] border-ink/50 p-5 shadow-lg relative"
+          className="bg-paper/90 p-7 relative"
           style={{
-            boxShadow: '4px 4px 0 rgba(0,0,0,0.12), -1px -1px 0 rgba(0,0,0,0.05)',
-            borderRadius: '4px 8px 4px 6px',
-            filter: 'url(#squiggly)',
+            filter: 'url(#sketchy)',
           }}
         >
+          {/* Hand-drawn border using SVG for thin sketchy lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
+            <rect 
+              x="2" y="2" 
+              width="calc(100% - 4px)" 
+              height="calc(100% - 4px)" 
+              fill="none" 
+              stroke="rgba(26,26,46,0.35)" 
+              strokeWidth="1.5"
+              rx="3"
+              style={{ filter: 'url(#sketchy)' }}
+            />
+          </svg>
+          
           {/* Menu Label at Top - handwritten style */}
-          <div className="text-center mb-5 pb-4 border-b-2 border-ink/25 border-dashed">
-            <span className="font-[Caveat] text-xl text-ink/70 tracking-wide">menu</span>
+          <div className="text-center mb-6 pb-4 border-b border-ink/20" style={{ borderStyle: 'dashed' }}>
+            <span className="font-[Caveat] text-xl text-ink/60 tracking-wide">menu</span>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {/* X Button - handwritten */}
+          <div className="flex flex-col gap-5">
+            {/* X Button - thin sketchy border */}
             <div className="relative group/tooltip">
               <a
                 href="https://x.com/i/communities/2035552239163527656"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center px-8 py-3
-                  bg-cream/40 border-[3px] border-ink/35
+                className="flex items-center justify-center px-10 py-4
+                  bg-cream/30 border border-ink/25
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  boxShadow: '2px 2px 0 rgba(0,0,0,0.1)',
-                  borderRadius: '3px 5px 4px 6px',
+                  borderRadius: '2px 4px 3px 5px',
                 }}
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">X</span>
@@ -69,17 +80,16 @@ export const Sidebar = () => {
               </div>
             </div>
 
-            {/* CA Button - handwritten */}
+            {/* CA Button - thin sketchy border */}
             <div className="relative group/tooltip">
               <button
                 onClick={() => setShowCA(true)}
-                className="w-full flex items-center justify-center px-8 py-3
-                  bg-cream/40 border-[3px] border-ink/35
+                className="w-full flex items-center justify-center px-10 py-4
+                  bg-cream/30 border border-ink/25
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  boxShadow: '2px 2px 0 rgba(0,0,0,0.1)',
-                  borderRadius: '4px 3px 5px 4px',
+                  borderRadius: '3px 2px 4px 3px',
                 }}
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">CA</span>
@@ -94,17 +104,12 @@ export const Sidebar = () => {
               </div>
             </div>
 
-            {/* Thesis Button - handwritten */}
-            <div className="relative group/tooltip">
-              <button
-                onClick={() => setShowThesis(true)}
-                className="w-full flex items-center justify-center px-8 py-3
-                  bg-cream/40 border-[3px] border-ink/35
+                className="w-full flex items-center justify-center px-10 py-4
+                  bg-cream/30 border border-ink/25
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  boxShadow: '2px 2px 0 rgba(0,0,0,0.1)',
-                  borderRadius: '5px 4px 3px 5px',
+                  borderRadius: '4px 3px 2px 4px',
                 }}
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">Thesis</span>
@@ -119,19 +124,18 @@ export const Sidebar = () => {
               </div>
             </div>
 
-            {/* Bonk Button - handwritten */}
+            {/* Bonk Button - thin sketchy border */}
             <div className="relative group/tooltip">
               <a
                 href="https://bonk.fun"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center px-8 py-3
-                  bg-cream/40 border-[3px] border-ink/35
+                className="flex items-center justify-center px-10 py-4
+                  bg-cream/30 border border-ink/25
                   hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
                 style={{ 
-                  boxShadow: '2px 2px 0 rgba(0,0,0,0.1)',
-                  borderRadius: '3px 6px 4px 3px',
+                  borderRadius: '2px 5px 3px 2px',
                 }}
               >
                 <span className="font-[Caveat] text-2xl font-semibold text-ink group-hover:text-white">bonk</span>
