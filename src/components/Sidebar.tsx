@@ -54,7 +54,7 @@ export const Sidebar = () => {
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '8px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '4px 7px', fontSize: '0.65rem' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '6px 10px', fontSize: '1.3rem' }}>
                   Join Community
                 </div>
               </div>
@@ -80,7 +80,7 @@ export const Sidebar = () => {
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '8px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '4px 7px', fontSize: '0.65rem' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '6px 10px', fontSize: '1.3rem' }}>
                   Contract Address
                 </div>
               </div>
@@ -106,7 +106,7 @@ export const Sidebar = () => {
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '8px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '4px 7px', fontSize: '0.65rem' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '6px 10px', fontSize: '1.3rem' }}>
                   How It Works
                 </div>
               </div>
@@ -134,7 +134,7 @@ export const Sidebar = () => {
               <div className="absolute left-full top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap" style={{ marginLeft: '8px' }}>
-                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '4px 7px', fontSize: '0.65rem' }}>
+                <div className="bg-ink text-white rounded shadow-lg font-[Caveat]" style={{ padding: '6px 10px', fontSize: '1.3rem' }}>
                   bonk.fun
                 </div>
               </div>
