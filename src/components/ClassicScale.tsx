@@ -74,58 +74,58 @@ export const ClassicScale = ({
   return (
     <div className="w-full flex flex-col items-center py-4">
       {/* Balance indicator */}
-      <div className="text-center mb-2 h-8">
-        <div className={`mono-text text-lg tracking-wider transition-colors duration-500
+      <div className="text-center mb-1 h-6">
+        <div className={`mono-text text-sm tracking-wider transition-colors duration-500
           ${isBalanced && (leftWeight + rightWeight > 0) ? 'text-green-600 font-bold' : 'text-ink/40'}`}>
           {isBalanced && (leftWeight + rightWeight > 0) ? '⚖️ BALANCED!' : ''}
         </div>
         {(leftWeight + rightWeight > 0) && (
-          <div className="text-sm text-ink/50 mono-text">
+          <div className="text-xs text-ink/50 mono-text">
             {leftWeight.toFixed(0)} vs {rightWeight.toFixed(0)}
           </div>
         )}
       </div>
 
       {/* Scale assembly - everything in one container */}
-      <div className="relative" style={{ width: '600px', height: '300px' }}>
+      <div className="relative" style={{ width: '300px', height: '150px' }}>
         
         {/* Stand (behind everything, doesn't rotate) - hand-drawn style */}
         <div className="absolute left-1/2 bottom-0 flex flex-col items-center z-0" style={{ transform: 'translateX(-50%)' }}>
           {/* Vertical pole - sketchy pencil style */}
           <div style={{
-            width: '12px',
-            height: '280px',
+            width: '6px',
+            height: '140px',
             background: '#3a3a3a',
-            border: '2px solid #2a2a2a',
+            border: '1px solid #2a2a2a',
             borderRadius: '1px',
-            boxShadow: '3px 3px 0 rgba(0,0,0,0.1)'
+            boxShadow: '2px 2px 0 rgba(0,0,0,0.1)'
           }} />
           {/* Base - hand-drawn */}
           <div style={{
-            width: '140px',
-            height: '14px',
+            width: '70px',
+            height: '7px',
             background: '#3a3a3a',
-            border: '2px solid #2a2a2a',
-            borderRadius: '2px',
-            boxShadow: '3px 3px 0 rgba(0,0,0,0.15)',
-            marginTop: '4px'
+            border: '1px solid #2a2a2a',
+            borderRadius: '1px',
+            boxShadow: '2px 2px 0 rgba(0,0,0,0.15)',
+            marginTop: '2px'
           }} />
         </div>
 
         {/* Pivot point - hand-drawn circle */}
         <div className="absolute left-1/2 z-30" style={{ transform: 'translateX(-50%)', top: '0px' }}>
           <div style={{
-            width: '28px',
-            height: '28px',
+            width: '14px',
+            height: '14px',
             borderRadius: '50%',
             background: '#f5f0e8',
-            border: '3px solid #3a3a3a',
-            boxShadow: '2px 2px 0 rgba(0,0,0,0.15)',
+            border: '2px solid #3a3a3a',
+            boxShadow: '1px 1px 0 rgba(0,0,0,0.15)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3a3a3a' }} />
+            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#3a3a3a' }} />
           </div>
         </div>
 
@@ -133,19 +133,19 @@ export const ClassicScale = ({
         <div 
           className="absolute left-1/2 z-10 transition-transform duration-500 ease-out"
           style={{ 
-            top: '16px',
+            top: '8px',
             transform: `translateX(-50%) rotate(${tiltAngle}deg)`,
             transformOrigin: 'center top',
-            width: '560px'
+            width: '280px'
           }}
         >
           {/* Horizontal beam - hand-drawn style */}
           <div style={{
-            height: '10px',
+            height: '5px',
             background: '#3a3a3a',
-            border: '2px solid #2a2a2a',
+            border: '1px solid #2a2a2a',
             borderRadius: '1px',
-            boxShadow: '3px 3px 0 rgba(0,0,0,0.1)'
+            boxShadow: '2px 2px 0 rgba(0,0,0,0.1)'
           }} />
 
           {/* Left and Right bucket assemblies */}
@@ -154,11 +154,11 @@ export const ClassicScale = ({
             {/* Left side */}
             <div className="flex flex-col items-center">
               {/* Chains - hand-drawn lines */}
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 {[0, 1, 2].map(i => (
                   <div key={i} style={{
-                    width: '2px',
-                    height: '50px',
+                    width: '1px',
+                    height: '25px',
                     background: '#3a3a3a',
                     borderRadius: '1px'
                   }} />
@@ -173,8 +173,8 @@ export const ClassicScale = ({
                 onDragLeave={() => setIsLeftOver(false)}
                 className="relative cursor-pointer transition-transform duration-200"
                 style={{
-                  width: '120px',
-                  height: '80px',
+                  width: '60px',
+                  height: '40px',
                   transform: isLeftOver ? 'scale(1.05)' : 'scale(1)'
                 }}
               >
@@ -184,29 +184,29 @@ export const ClassicScale = ({
                   top: 0,
                   left: 0,
                   right: 0,
-                  height: '8px',
+                  height: '4px',
                   background: '#f5f0e8',
-                  border: '2px solid #3a3a3a',
-                  borderRadius: '3px 3px 0 0'
+                  border: '1px solid #3a3a3a',
+                  borderRadius: '2px 2px 0 0'
                 }} />
                 
                 {/* Bucket body - hand-drawn trapezoid */}
                 <div style={{
                   position: 'absolute',
-                  top: '6px',
+                  top: '3px',
                   left: '5%',
                   right: '5%',
                   bottom: 0,
                   background: '#f5f0e8',
-                  border: '2px solid #3a3a3a',
+                  border: '1px solid #3a3a3a',
                   borderTop: 'none',
-                  borderRadius: '0 0 8px 8px',
+                  borderRadius: '0 0 4px 4px',
                   clipPath: 'polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)',
-                  boxShadow: isLeftOver ? '0 0 15px rgba(74, 111, 165, 0.4)' : '3px 3px 0 rgba(0,0,0,0.1)'
+                  boxShadow: isLeftOver ? '0 0 8px rgba(74, 111, 165, 0.4)' : '2px 2px 0 rgba(0,0,0,0.1)'
                 }} />
                 
                 {/* Tokens inside */}
-                <div className="absolute inset-2 flex flex-wrap items-end justify-center content-end gap-1 overflow-hidden z-10" style={{ top: '14px' }}>
+                <div className="absolute inset-1 flex flex-wrap items-end justify-center content-end gap-0.5 overflow-hidden z-10" style={{ top: '7px' }}>
                   {leftTokens.map((token) => (
                     <TokenCard
                       key={token.id}
@@ -214,14 +214,15 @@ export const ClassicScale = ({
                       source="left"
                       onDragStart={onDragStart}
                       compact
+                      mini
                     />
                   ))}
                 </div>
                 
                 {/* Drop hint - handwritten, centered in bucket */}
                 {leftTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '10px' }}>
-                    <span style={{ color: '#8a8a8a', fontSize: '16px', fontFamily: 'Caveat, cursive' }}>drop here</span>
+                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '5px' }}>
+                    <span style={{ color: '#8a8a8a', fontSize: '10px', fontFamily: 'Caveat, cursive' }}>drop</span>
                   </div>
                 )}
               </div>
@@ -230,11 +231,11 @@ export const ClassicScale = ({
             {/* Right side */}
             <div className="flex flex-col items-center">
               {/* Chains - hand-drawn lines */}
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 {[0, 1, 2].map(i => (
                   <div key={i} style={{
-                    width: '2px',
-                    height: '50px',
+                    width: '1px',
+                    height: '25px',
                     background: '#3a3a3a',
                     borderRadius: '1px'
                   }} />
@@ -249,8 +250,8 @@ export const ClassicScale = ({
                 onDragLeave={() => setIsRightOver(false)}
                 className="relative cursor-pointer transition-transform duration-200"
                 style={{
-                  width: '120px',
-                  height: '80px',
+                  width: '60px',
+                  height: '40px',
                   transform: isRightOver ? 'scale(1.05)' : 'scale(1)'
                 }}
               >
@@ -260,29 +261,29 @@ export const ClassicScale = ({
                   top: 0,
                   left: 0,
                   right: 0,
-                  height: '8px',
+                  height: '4px',
                   background: '#f5f0e8',
-                  border: '2px solid #3a3a3a',
-                  borderRadius: '3px 3px 0 0'
+                  border: '1px solid #3a3a3a',
+                  borderRadius: '2px 2px 0 0'
                 }} />
                 
                 {/* Bucket body - hand-drawn trapezoid */}
                 <div style={{
                   position: 'absolute',
-                  top: '6px',
+                  top: '3px',
                   left: '5%',
                   right: '5%',
                   bottom: 0,
                   background: '#f5f0e8',
-                  border: '2px solid #3a3a3a',
+                  border: '1px solid #3a3a3a',
                   borderTop: 'none',
-                  borderRadius: '0 0 8px 8px',
+                  borderRadius: '0 0 4px 4px',
                   clipPath: 'polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)',
-                  boxShadow: isRightOver ? '0 0 15px rgba(74, 111, 165, 0.4)' : '3px 3px 0 rgba(0,0,0,0.1)'
+                  boxShadow: isRightOver ? '0 0 8px rgba(74, 111, 165, 0.4)' : '2px 2px 0 rgba(0,0,0,0.1)'
                 }} />
                 
                 {/* Tokens inside */}
-                <div className="absolute inset-2 flex flex-wrap items-end justify-center content-end gap-1 overflow-hidden z-10" style={{ top: '14px' }}>
+                <div className="absolute inset-1 flex flex-wrap items-end justify-center content-end gap-0.5 overflow-hidden z-10" style={{ top: '7px' }}>
                   {rightTokens.map((token) => (
                     <TokenCard
                       key={token.id}
@@ -290,14 +291,15 @@ export const ClassicScale = ({
                       source="right"
                       onDragStart={onDragStart}
                       compact
+                      mini
                     />
                   ))}
                 </div>
                 
                 {/* Drop hint - handwritten, centered in bucket */}
                 {rightTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '10px' }}>
-                    <span style={{ color: '#8a8a8a', fontSize: '16px', fontFamily: 'Caveat, cursive' }}>drop here</span>
+                  <div className="absolute inset-0 flex items-center justify-center z-10" style={{ top: '5px' }}>
+                    <span style={{ color: '#8a8a8a', fontSize: '10px', fontFamily: 'Caveat, cursive' }}>drop</span>
                   </div>
                 )}
               </div>
