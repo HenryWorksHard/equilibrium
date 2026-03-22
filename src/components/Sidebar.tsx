@@ -63,15 +63,13 @@ export const Sidebar = () => {
       {/* CA Modal - Note paper style, CENTERED */}
       {showCA && (
         <div 
-          className="fixed inset-0 z-[100]"
+          className="fixed inset-0 z-[100] grid place-items-center p-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)' }}
           onClick={() => setShowCA(false)}
         >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-          
-          {/* Modal - centered with transform */}
+          {/* Modal */}
           <div 
-            className="note-paper rounded-lg max-w-md w-[calc(100%-2rem)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="note-paper rounded-lg max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -106,15 +104,13 @@ export const Sidebar = () => {
       {/* Thesis Modal - Note paper style, CENTERED */}
       {showThesis && (
         <div 
-          className="fixed inset-0 z-[100] overflow-y-auto"
+          className="fixed inset-0 z-[100] grid place-items-center p-4 overflow-y-auto"
+          style={{ backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)' }}
           onClick={() => setShowThesis(false)}
         >
-          {/* Backdrop */}
-          <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
-          
-          {/* Modal - centered with transform */}
+          {/* Modal */}
           <div 
-            className="note-paper rounded-lg max-w-2xl w-[calc(100%-2rem)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[90vh] overflow-y-auto"
+            className="note-paper rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto my-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
