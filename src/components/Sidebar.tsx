@@ -19,7 +19,7 @@ export const Sidebar = () => {
       {/* Sidebar - clean hand-drawn style with clear text */}
       <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '20px' }}>
         <div 
-          className="bg-paper p-8 relative border-2 border-ink/30"
+          className="bg-paper p-8 relative"
           style={{
             borderRadius: '4px 8px 6px 10px',
             boxShadow: '4px 4px 0 rgba(0,0,0,0.08)',
