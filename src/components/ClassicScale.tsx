@@ -214,7 +214,7 @@ export const ClassicScale = ({
                 
                 {/* Drop hint */}
                 {leftTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-end justify-center pb-2 z-10">
+                  <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
                     <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
                   </div>
                 )}
@@ -287,7 +287,7 @@ export const ClassicScale = ({
                 
                 {/* Drop hint */}
                 {rightTokens.length === 0 && (
-                  <div className="absolute inset-0 flex items-end justify-center pb-2 z-10">
+                  <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
                     <span style={{ color: '#94a3b8', fontSize: '11px', fontFamily: 'monospace' }}>drop here</span>
                   </div>
                 )}
