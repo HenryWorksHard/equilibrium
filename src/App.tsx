@@ -62,6 +62,50 @@ function App() {
       {/* Math scribbles background */}
       <div className="math-scribbles" aria-hidden="true" />
       
+      {/* Additional hand-drawn scribbles */}
+      <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden" aria-hidden="true">
+        {/* Top area scribbles */}
+        <span className="absolute top-[12%] left-[25%] font-[Caveat] text-2xl text-[#6a8aaa] opacity-20 rotate-[-3deg]">
+          ∫ f(x)dx
+        </span>
+        <span className="absolute top-[6%] right-[20%] font-[Caveat] text-xl text-[#8a6a6a] opacity-18 rotate-[6deg]">
+          π ≈ 3.14159...
+        </span>
+        <span className="absolute top-[18%] right-[35%] font-[Caveat] text-lg text-[#6a7a8a] opacity-15 rotate-[-5deg]">
+          sin²θ + cos²θ = 1
+        </span>
+        
+        {/* Side scribbles */}
+        <span className="absolute top-[40%] left-[3%] font-[Caveat] text-xl text-[#7a8a6a] opacity-20 rotate-[-12deg] writing-vertical">
+          Σ xᵢ
+        </span>
+        <span className="absolute top-[55%] right-[3%] font-[Caveat] text-2xl text-[#8a7a6a] opacity-18 rotate-[8deg]">
+          ∞
+        </span>
+        
+        {/* Bottom scribbles */}
+        <span className="absolute bottom-[25%] left-[15%] font-[Caveat] text-xl text-[#6a6a8a] opacity-15 rotate-[3deg]">
+          lim x→∞
+        </span>
+        <span className="absolute bottom-[8%] left-[40%] font-[Caveat] text-lg text-[#7a6a7a] opacity-18 rotate-[-4deg]">
+          y = mx + b
+        </span>
+        <span className="absolute bottom-[20%] right-[25%] font-[Caveat] text-xl text-[#6a8a7a] opacity-20 rotate-[5deg]">
+          F = ma
+        </span>
+        
+        {/* Scattered small ones */}
+        <span className="absolute top-[30%] left-[45%] font-[Caveat] text-lg text-[#8a8a6a] opacity-12 rotate-[-7deg]">
+          √2
+        </span>
+        <span className="absolute top-[65%] left-[55%] font-[Caveat] text-xl text-[#6a7a7a] opacity-15 rotate-[10deg]">
+          Δ
+        </span>
+        <span className="absolute bottom-[35%] right-[12%] font-[Caveat] text-lg text-[#7a7a8a] opacity-18 rotate-[-2deg]">
+          ∂y/∂x
+        </span>
+      </div>
+      
       <Sidebar />
       
       <div className="flex flex-col items-center px-4 pt-12 pb-8 ml-20 md:ml-24">

@@ -34,73 +34,41 @@ body {
   position: relative;
 }
 
-/* Math scribbles overlay */
+/* Math scribbles overlay - handwritten style */
 .math-scribbles {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.08;
-  font-family: 'Crimson Pro', serif;
-  font-style: italic;
-  color: #4a6fa5;
   overflow: hidden;
 }
 
+/* Top-left cluster */
 .math-scribbles::before {
-  content: 
-    '∫∫ f(x)dx = F(b) - F(a)   '
-    'E = mc²   '
-    'Σᵢ₌₁ⁿ xᵢ   '
-    'lim x→∞   '
-    'π ≈ 3.14159   '
-    '∂y/∂x   '
-    'sin²θ + cos²θ = 1   '
-    '√(a² + b²)   '
-    'Δx · Δp ≥ ℏ/2   '
-    'e^(iπ) + 1 = 0   '
-    '∇ × E = -∂B/∂t   '
-    'λ = h/p   '
-    '∮ B·dl = μ₀I   '
-    'a² + b² = c²   '
-    'f(x) = ax² + bx + c   '
-    '∞   '
-    'd/dx(eˣ) = eˣ   '
-    'log₂(n)   '
-    '∫₀^∞   '
-    'Φ = BA cos θ   ';
+  content: 'E = mc²';
   position: absolute;
-  top: 5%;
-  left: 5%;
-  font-size: 1.2rem;
-  white-space: nowrap;
-  transform: rotate(-5deg);
+  top: 8%;
+  left: 12%;
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #5a7a9a;
+  opacity: 0.25;
+  transform: rotate(-8deg);
 }
 
+/* Bottom-right cluster */
 .math-scribbles::after {
-  content: 
-    'y = mx + b   '
-    '∑ₙ₌₀^∞ xⁿ/n!   '
-    'P(A|B) = P(B|A)P(A)/P(B)   '
-    '∇²ψ + k²ψ = 0   '
-    'F = ma   '
-    'PV = nRT   '
-    '∂²u/∂t² = c²∇²u   '
-    'det(A) ≠ 0   '
-    'A ∩ B   '
-    'lim_{h→0}   '
-    '∫∫∫ ρ dV   '
-    'curl F   '
-    'div E = ρ/ε₀   '
-    '|z| = √(x² + y²)   '
-    'i² = -1   '
-    'φ = (1+√5)/2   ';
+  content: 'a² + b² = c²';
   position: absolute;
-  bottom: 10%;
-  right: 5%;
-  font-size: 1rem;
-  white-space: nowrap;
-  transform: rotate(3deg);
+  bottom: 15%;
+  right: 8%;
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #7a5a5a;
+  opacity: 0.22;
+  transform: rotate(4deg);
 }
 
 /* Red margin line like a notebook */
