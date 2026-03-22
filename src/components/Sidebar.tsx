@@ -149,18 +149,20 @@ export const Sidebar = () => {
             justifyContent: 'center',
             padding: '1rem',
             backgroundColor: 'rgba(0,0,0,0.4)',
+            perspective: '1200px',
           }}
           onClick={() => handleClose(setShowCA)}
         >
           {/* Modal card */}
           <div 
-            className={`relative rounded-lg shadow-2xl ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
+            className={`relative rounded-lg shadow-2xl ${isClosing ? 'page-turn-exit' : 'page-turn-enter'}`}
             style={{
               maxWidth: '28rem',
               width: '100%',
               backgroundColor: '#faf8f5',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
               borderRadius: '4px 8px 6px 10px',
+              transformStyle: 'preserve-3d',
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -216,12 +218,13 @@ export const Sidebar = () => {
             justifyContent: 'center',
             padding: '1rem',
             backgroundColor: 'rgba(0,0,0,0.4)',
+            perspective: '1200px',
           }}
           onClick={() => handleClose(setShowThesis)}
         >
           {/* Modal card */}
           <div 
-            className={`relative rounded-lg shadow-2xl overflow-y-auto ${isClosing ? 'modal-card-exit' : 'modal-card-enter'}`}
+            className={`relative rounded-lg shadow-2xl overflow-y-auto ${isClosing ? 'page-turn-exit' : 'page-turn-enter'}`}
             style={{
               maxWidth: '42rem',
               width: '100%',
@@ -230,6 +233,7 @@ export const Sidebar = () => {
               backgroundColor: '#faf8f5',
               backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0px, transparent 27px, #c8dae8 27px, #c8dae8 28px)',
               borderRadius: '4px 8px 6px 10px',
+              transformStyle: 'preserve-3d',
             }}
             onClick={(e) => e.stopPropagation()}
           >
