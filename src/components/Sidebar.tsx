@@ -16,104 +16,113 @@ export const Sidebar = () => {
 
   return (
     <>
-      {/* Sidebar */}
+      {/* Sidebar - hand-drawn notebook style */}
       <div className="fixed top-1/2 -translate-y-1/2 z-50" style={{ left: '24px' }}>
-        <div className="bg-paper border-2 border-graphLight rounded-xl p-4 shadow-lg">
-          {/* Corner accents */}
-          <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-graphBlue" />
-          <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-graphBlue" />
-          <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-graphBlue" />
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-graphBlue" />
+        <div className="bg-paper border-2 border-ink/40 rounded-sm p-4 shadow-lg
+          relative"
+          style={{
+            boxShadow: '3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.05)',
+          }}
+        >
+          {/* Sketchy corner doodles */}
+          <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-ink/30 rounded-tl-sm" />
+          <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-ink/30 rounded-tr-sm" />
+          <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-ink/30 rounded-bl-sm" />
+          <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-ink/30 rounded-br-sm" />
 
-          {/* Menu Label at Top */}
-          <div className="text-center mb-4 pb-3 border-b border-graphLight">
-            <span className="mono-text text-xs text-ink/50 tracking-widest font-medium">MENU</span>
+          {/* Menu Label at Top - handwritten style */}
+          <div className="text-center mb-4 pb-3 border-b border-ink/20 border-dashed">
+            <span className="font-[Caveat] text-base text-ink/60 tracking-wide">menu</span>
           </div>
 
           <div className="flex flex-col gap-3">
-            {/* X Button */}
+            {/* X Button - handwritten */}
             <div className="relative group/tooltip">
               <a
                 href="https://x.com/i/communities/2035552239163527656"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3
-                  bg-cream/60 border border-graphLight rounded-lg
-                  hover:bg-graphBlue hover:border-graphBlue
+                className="flex items-center justify-center px-6 py-2.5
+                  bg-cream/40 border-2 border-ink/30 rounded-sm
+                  hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
+                style={{ boxShadow: '2px 2px 0 rgba(0,0,0,0.08)' }}
               >
-                <span className="mono-text text-base font-bold text-ink group-hover:text-white">X</span>
+                <span className="font-[Caveat] text-xl font-semibold text-ink group-hover:text-white">X</span>
               </a>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more padding */}
+              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
-                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                <div className="bg-ink text-white text-sm px-4 py-2 rounded shadow-lg font-[Caveat] text-lg">
                   Join Community
                 </div>
               </div>
             </div>
 
-            {/* CA Button */}
+            {/* CA Button - handwritten */}
             <div className="relative group/tooltip">
               <button
                 onClick={() => setShowCA(true)}
-                className="w-full flex items-center justify-center px-6 py-3
-                  bg-cream/60 border border-graphLight rounded-lg
-                  hover:bg-graphBlue hover:border-graphBlue
+                className="w-full flex items-center justify-center px-6 py-2.5
+                  bg-cream/40 border-2 border-ink/30 rounded-sm
+                  hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
+                style={{ boxShadow: '2px 2px 0 rgba(0,0,0,0.08)' }}
               >
-                <span className="mono-text text-base font-bold text-ink group-hover:text-white">CA</span>
+                <span className="font-[Caveat] text-xl font-semibold text-ink group-hover:text-white">CA</span>
               </button>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more padding */}
+              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
-                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                <div className="bg-ink text-white text-sm px-4 py-2 rounded shadow-lg font-[Caveat] text-lg">
                   Contract Address
                 </div>
               </div>
             </div>
 
-            {/* Thesis Button */}
+            {/* Thesis Button - handwritten */}
             <div className="relative group/tooltip">
               <button
                 onClick={() => setShowThesis(true)}
-                className="w-full flex items-center justify-center px-6 py-3
-                  bg-cream/60 border border-graphLight rounded-lg
-                  hover:bg-graphBlue hover:border-graphBlue
+                className="w-full flex items-center justify-center px-6 py-2.5
+                  bg-cream/40 border-2 border-ink/30 rounded-sm
+                  hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
+                style={{ boxShadow: '2px 2px 0 rgba(0,0,0,0.08)' }}
               >
-                <span className="mono-text text-base font-bold text-ink group-hover:text-white">Thesis</span>
+                <span className="font-[Caveat] text-xl font-semibold text-ink group-hover:text-white">Thesis</span>
               </button>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more padding */}
+              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
-                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                <div className="bg-ink text-white text-sm px-4 py-2 rounded shadow-lg font-[Caveat] text-lg">
                   How It Works
                 </div>
               </div>
             </div>
 
-            {/* Bonk Button */}
+            {/* Bonk Button - handwritten */}
             <div className="relative group/tooltip">
               <a
                 href="https://bonk.fun"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3
-                  bg-cream/60 border border-graphLight rounded-lg
-                  hover:bg-graphBlue hover:border-graphBlue
+                className="flex items-center justify-center px-6 py-2.5
+                  bg-cream/40 border-2 border-ink/30 rounded-sm
+                  hover:bg-ink hover:border-ink
                   transition-all duration-200 group"
+                style={{ boxShadow: '2px 2px 0 rgba(0,0,0,0.08)' }}
               >
-                <span className="mono-text text-base font-bold text-ink group-hover:text-white">bonk</span>
+                <span className="font-[Caveat] text-xl font-semibold text-ink group-hover:text-white">bonk</span>
               </a>
-              {/* Tooltip */}
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 
+              {/* Tooltip - more padding */}
+              <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 
                 opacity-0 group-hover/tooltip:opacity-100 pointer-events-none
                 transition-opacity duration-200 whitespace-nowrap">
-                <div className="bg-ink text-white text-sm px-3 py-1.5 rounded-lg shadow-lg mono-text">
+                <div className="bg-ink text-white text-sm px-4 py-2 rounded shadow-lg font-[Caveat] text-lg">
                   bonk.fun
                 </div>
               </div>
