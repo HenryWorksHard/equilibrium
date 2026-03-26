@@ -1,4 +1,4 @@
-# Equilibrium ⚖️
+# Equilibrium
 
 **Live:** https://buyequilibrium.com  
 **Backup:** https://equilibrium-sand.vercel.app  
@@ -48,9 +48,9 @@ git add -A && git commit -m "update" && git push
 
 ## Sidebar Buttons
 
-- **𝕏** — Links to X/Twitter (update href when account created)
+- **X** — Links to X/Twitter (update href when account created)
 - **CA** — Shows "Coming Soon" modal (update after coin launches)
-- **∑** — Opens Thesis modal explaining Balanced Mode math
+- **SUM** — Opens Thesis modal explaining Balanced Mode math
 
 ## Files
 
